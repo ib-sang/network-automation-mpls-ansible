@@ -1,0 +1,26 @@
+conf t
+!
+hostname CSR2
+!
+ip vrf MGNT
+!
+ip domain name lab.com
+ip name-server 192.168.200.1
+!
+username admin privilege 15 password 0 admin
+cryp key gene rsa mod 2048
+!
+interface GigabitEthernet5/0
+ ip vrf forwarding MGNT
+ ip address 192.168.200.12 255.255.255.0
+ no shutdown
+!
+ip route vrf MGNT 0.0.0.0 0.0.0.0 192.168.200.1
+!
+line vty 0 5
+ privilege level 15
+ login local
+ transport input all
+!
+end
+wr 
