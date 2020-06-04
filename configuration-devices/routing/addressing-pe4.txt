@@ -1,0 +1,18 @@
+conf t
+!
+interface GigabitEthernet0/0
+ ip address 10.255.254.42 255.255.255.252
+ mpls ip
+ no sh
+!
+interface GigabitEthernet1/0
+ ip address 10.255.254.38 255.255.255.252
+ mpls ip
+ no sh
+!
+interface Loopback0
+ ip address 10.255.255.14 255.255.255.255
+!
+end
+wr
+!
