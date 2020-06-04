@@ -1,7 +1,9 @@
+---
 all:
   vars:
     username: admin
     password: admin
+    ansible_connection: local
   groups:
     SJ-HQ:
       hosts:
