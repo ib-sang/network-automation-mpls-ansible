@@ -1,0 +1,5 @@
+ 1-> show mpls forwarding-table
+ 2-> show mpls ldp neighbor
+ 3-> show mpls ldp bindings
+ 4-> show mpls l2transport binding
+ 5-> show mpls l2transport vc
