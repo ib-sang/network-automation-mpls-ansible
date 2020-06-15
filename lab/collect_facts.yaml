@@ -16,11 +16,6 @@
       name: Collect IOS facts
       register: ios_facts
 
-    - name: example copying file with owner and permissions
-      copy:
-        content: "{{ ios_facts | to_nice_json }}"
-        dest: "out/{{inventory_hostname}}_foo.json"
-        
     - copy: content="{{ ios_facts | to_nice_json }}" dest="out/{{inventory_hostname}}_ios_facts.json"
       name: Save facts to JSON file  
 
