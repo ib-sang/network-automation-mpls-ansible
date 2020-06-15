@@ -14,3 +14,4 @@ ospf_redistribute_bgp_type: "subnets"
 ospf_network_prefix: 10.255.20.0
 ospf_network_wildcard_mask: 0.0.0.3
 ospf_area: 10
+ospf_metric: 1
