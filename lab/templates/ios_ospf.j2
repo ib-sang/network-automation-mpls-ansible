@@ -1,0 +1,3 @@
+router ospf {{ ospf_as_number }} vrf {{ vrf_a }}
+  redistribute bgp {{ bgp_as_number }} {{ ospf_redistribute_bgp_type }}
+  network {{ ospf_network_prefix }} {{ ospf_network_wildcard_mask }} area {{ ospf_area }}

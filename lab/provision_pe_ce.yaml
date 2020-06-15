@@ -20,4 +20,9 @@
       ios_config:
         provider: "{{ credentials }}"
         src: templates/ios_ospf.j2
+    
+    - name: Configure MP-BGP
+      ios_config:
+        provider: "{{ credentials }}"
+        src: templates/mp_bgp_enter_pe.j2    
 

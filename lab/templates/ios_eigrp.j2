@@ -1,2 +1,7 @@
 router eigrp {{ eigrp_as_number }}
-  network {{ eigrp_network_prefix }} {{ eigrp_network_wildcard_mask }}
+  address-family ipv4 vrf {{ vrf_b }}
+    redistribute bgp {{ bgp_as_number }} metric {{ eigrp_metric }}
+    network {{ eigrp_network_prefix }} {{ eigrp_network_wildcard_mask }}
+    autonomous-system {{ eigrp_autonomous_system }}
+
+
