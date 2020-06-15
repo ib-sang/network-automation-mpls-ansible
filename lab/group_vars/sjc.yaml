@@ -11,6 +11,6 @@ eigrp_network_wildcard_mask: 0.0.0.3
 eigrp_autonomous_system: 200
 ospf_as_number: 2
 ospf_redistribute_bgp_type: "subnets"
-ospf_network: 10.255.20.0
+ospf_network_prefix: 10.255.20.0
 ospf_network_wildcard_mask: 0.0.0.3
 ospf_area: 10
