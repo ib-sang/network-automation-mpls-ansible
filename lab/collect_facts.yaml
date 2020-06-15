@@ -16,5 +16,8 @@
       name: Collect IOS facts
       register: ios_facts
 
+    - copy: content="{{ ios_facts | to_nice_json }}" dest="out/{{inventory_hostname}}_ios_facts.json"
+      name: Save facts to JSON file
+
     - debug:
         msg: "{{ ansible_net_hostname }}, version: {{ ansible_net_version }}"
