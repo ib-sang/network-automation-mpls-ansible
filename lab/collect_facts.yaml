@@ -17,9 +17,10 @@
       register: ios_facts 
 
     - debug:
-      msg: "{{ test_variable }}"
+        msg: "{{ ansible_net_hostname }}, version: {{ ansible_net_version }}"
 
     - debug:
-        msg: "{{ ansible_net_hostname }}, version: {{ ansible_net_version }}"
-      tag:
+      msg: "{{ test_variable }}"
+
+      tags:
         - debug
