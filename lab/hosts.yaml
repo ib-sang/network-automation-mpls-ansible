@@ -4,7 +4,6 @@ all:
     username: admin
     password: admin
     ansible_connection: local
-    ansible_python_interpreter: "usr/bin/ven python"
   children:
     sjc:
       hosts:
