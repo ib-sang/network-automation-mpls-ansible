@@ -19,7 +19,7 @@
     - name: example copying file with owner and permissions
       copy:
         content: "{{ ios_facts | to_nice_json }}"
-        dest: "/out/{{inventory_hostname}}_foo.json"
+        dest: "out/{{inventory_hostname}}_foo.json"
         mode: 0644
 
     - debug:
