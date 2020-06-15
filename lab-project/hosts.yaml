@@ -4,15 +4,12 @@ all:
     username: admin
     password: admin
     ansible_connection: local
+    ansible_python-interpreter: "usr/bin/env python"
   children:
     sjc:
       hosts:
-        192.168.200.11:
-        192.168.200.12:
-        192.168.200.13:
-        192.168.200.14:
-        192.168.200.21:
-        192.168.200.22:
-        192.168.200.23:
-        192.168.200.24:
+        PE1:
+          ansible_host: 192.168.200.21
+        PE2:
+          ansible_host: 192.168.200.22
   
