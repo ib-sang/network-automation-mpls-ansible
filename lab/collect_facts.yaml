@@ -15,8 +15,13 @@
         provider: "{{ credentials }}"
       name: Collect IOS facts
       register: ios_facts
+     
+    - name: Copy using the 'ios_facts' for inline data
+      copy:
+        content: "{{ ios_facts | to_nice_json }}"
+        dest: "out/{{inventory_hostname}}_ios_facts.json" 
 
-    - copy: content="{{ ios_facts | to_nice_json }}" dest="out/{{inventory_hostname}}_ios_facts.json" unsafe_writes=true
+    - copy: content="{{ ios_facts | to_nice_json }}" dest="out/{{inventory_hostname}}_ios_facts.json" 
       name: Save facts to JSON file
 
     - debug:
