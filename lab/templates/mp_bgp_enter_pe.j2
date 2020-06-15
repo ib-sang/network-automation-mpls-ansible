@@ -1,6 +1,7 @@
-router bgr {{bgp_as_number}}
+router bgp {{bgp_as_number}}
   address-family ipv4 vrf {{ vrf_a }}
     redistribute ospf {{ ospf_as_number }} metric {{ ospf_metric }}
+    exit-address-family
  address-family ipv4 vrf {{ vrf_b }}
     redistribute eigrp {{ eigrp_as_number }}
     
