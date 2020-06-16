@@ -35,3 +35,10 @@ network_prefix_20: 10.255.20.0
 network_prefix_21: 10.255.21.0
 network_prefix_10: 10.255.10.0
 network_prefix_11: 10.255.11.0
+interface_loopback0_pe1: 10.255.255.11
+ip_address_pe1_00: 10.255.10.1
+ip_address_pe1_10: 10.255.20.1
+pe2_interface_loopback0_pe2: 10.255.255.12
+ip_address_pe2_00: 10.255.11.1
+ip_address_pe2_10: 10.255.21.1
+
