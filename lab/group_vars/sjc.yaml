@@ -1,6 +1,12 @@
 ---
 username: admin
 password: admin
+interface_GigabitEthernet_00: 0/0
+interface_GigabitEthernet_10: 1/0
+interface_GigabitEthernet_20: 2/0
+interface_GigabitEthernet_30: 3/0
+interface_GigabitEthernet_40: 4/0
+interface_GigabitEthernet_50: 5/0
 bgp_as_number: 64512
 bgp_neighbor_community: extended
 eigrp_as_number: 200

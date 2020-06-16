@@ -8,12 +8,12 @@ ip vrf {{ vrf_b }}
  route-target export {{ route_target_export_b }}
  route-target import {{ route_target_import_b }}
 
-interface GigabitEthernet {{ pe1_interface_GigabitEthernet_00 }}
+interface GigabitEthernet {{ interface_GigabitEthernet_00 }}
  ip vrf forwarding {{ vrf_a }}
  ip address {{ ip_address_pe1_00 }} {{ mask_4 }}
  no sh
 
-interface GigabitEthernet {{ pe1_interface_GigabitEthernet_10 }}
+interface GigabitEthernet {{ interface_GigabitEthernet_10 }}
  ip vrf forwarding {{ vrf_b }}
  ip address {{ ip_address_pe1_10 }} {{ mask_4 }}
  no sh
