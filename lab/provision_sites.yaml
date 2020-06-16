@@ -11,18 +11,44 @@
       timeout: 30
 
   tasks:
-    - name: Configure EIGRP
+    - name: Configure VRF For PE1
       ios_config:
         provider: "{{ credentials }}"
-        src: templates/ios_eigrp.j2
+        src: templates/ios_vrf_pe1.j2
+        
+    - name: Configure VRF For PE2
+      ios_config:
+        provider: "{{ credentials }}"
+        src: templates/ios_vrf_pe2.j2
+
+    - name: Configure EIGRP For PE1
+      ios_config:
+        provider: "{{ credentials }}"
+        src: templates/ios_eigrp_pe1.j2
+
+    - name: Configure EIGRP For PE2
+      ios_config:
+        provider: "{{ credentials }}"
+        src: templates/ios_eigrp_pe2.j2
+
+    - name: Configure OSPF For PE1
+      ios_config:
+        provider: "{{ credentials }}"
+        src: templates/ios_ospf_pe1.j2
+
+    - name: Configure OSPF For PE2
+      ios_config:
+        provider: "{{ credentials }}"
+        src: templates/ios_ospf_pe2.j2
     
-    - name: Configure OSPF
+    - name: Configure MP-BGP For PE1
       ios_config:
         provider: "{{ credentials }}"
-        src: templates/ios_ospf.j2
-    
-    - name: Configure MP-BGP
+        src: templates/ios_mp_bgp_pe1.j2    
+
+    - name: Configure MP-BGP For PE2
       ios_config:
         provider: "{{ credentials }}"
-        src: templates/mp_bgp_enter_pe.j2    
+        src: templates/ios_mp_bgp_pe2.j2    
+
 

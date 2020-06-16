@@ -1,0 +1,11 @@
+---
+pe2_interface_GigabitEthernet_00: 0/0
+pe2_interface_GigabitEthernet_10: 1/0
+pe2_interface_GigabitEthernet_20: 2/0
+pe2_interface_GigabitEthernet_30: 3/0
+pe2_interface_GigabitEthernet_40: 4/0
+pe2_interface_GigabitEthernet_50: 5/0
+pe2_interface_loopback0_pe2: 10.255.255.12
+ip_address_pe2_00: 10.255.11.1
+ip_address_pe2_10: 10.255.21.1
+

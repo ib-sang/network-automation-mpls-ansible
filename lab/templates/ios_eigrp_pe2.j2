@@ -1,0 +1,6 @@
+router eigrp {{ eigrp_as_number }}
+  address-family ipv4 vrf {{ vrf_b }}
+    redistribute bgp {{ bgp_as_number }} 
+    network {{ network_prefix_21 }} {{ network_wildcard_mask_3 }}
+    autonomous-system {{ autonomous_system_200 }}
+

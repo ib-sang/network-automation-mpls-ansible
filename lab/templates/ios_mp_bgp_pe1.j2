@@ -1,0 +1,12 @@
+router bgp {{ bgp_as_number }}
+ bgp log-neighbor-changes
+ neighbor {{ interface_loopback0_pe2 }} remote-as {{ bgp_as_number }}
+ neighbor {{ interface_loopback0_pe2 }} update-source Loopback0
+ address-family ipv4
+  neighbor {{ interface_loopback0_pe2 }} activate
+ exit-address-family
+ address-family vpnv4
+  neighbor {{ interface_loopback0_pe2 }} activate
+  neighbor {{ interface_loopback0_pe2 }} send-community {{ bgp_neighbor_community }}
+ exit-address-family
+    
