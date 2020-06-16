@@ -20,7 +20,8 @@
         msg: "{{ ansible_net_hostname }}, version: {{ ansible_net_version }}"
 
     - debug:
-      msg: "{{ test_variable }}"
+        msg: "{{ test_variable }}"
+
       tags:
         - debug
 
