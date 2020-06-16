@@ -5,6 +5,10 @@
     - name: Dump all vars
       # action: template src=templates/dumpall.j2 dest=/tmp/ansible.all
       debug: var=hostvars[inventory_hostname]
+    - ios_facts:
+        provider: "{{ credentials }}"
+      name: Collect IOS facts
+      register: ios_facts
 
     - copy: content="{{ ios_facts | to_nice_json }}" dest="out/{{inventory_hostname}}_ios_facts.json"
       name: Save facts to JSON file 
