@@ -15,7 +15,7 @@
       ios_config:
         provider: "{{ credentials }}"
         src: templates/ios_vrf_pe1.j2
-        
+
     - name: Configure VRF For PE2
       ios_config:
         provider: "{{ credentials }}"
@@ -50,5 +50,20 @@
       ios_config:
         provider: "{{ credentials }}"
         src: templates/ios_mp_bgp_pe2.j2    
+
+    - name: Configure Redistribution Routes
+      ios_config:
+        provider: "{{ credentials }}"
+        src: templates/ios_bgp_redistribution-routes.j2   
+
+    - name: Configure L2VPN For PE1
+      ios_config:
+        provider: "{{ credentials }}"
+        src: templates/ios_l2vpn_p1.j2    
+
+    - name: Configure L2VPN For PE2
+      ios_config:
+        provider: "{{ credentials }}"
+        src: templates/ios_l2vpn_p2.j2    
 
 
