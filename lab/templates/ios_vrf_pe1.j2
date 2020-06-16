@@ -5,7 +5,6 @@ ip vrf {{ vrf_a }}
 
 interface GigabitEthernet {{ interface_GigabitEthernet_00 }}
  ip vrf forwarding {{ vrf_a }}
- ip address {{ ip_address_pe1_00 }} {{ mask_4 }}
  no sh
 
 ip vrf {{ vrf_b }}
@@ -15,5 +14,4 @@ ip vrf {{ vrf_b }}
 
 interface GigabitEthernet {{ interface_GigabitEthernet_10 }}
  ip vrf forwarding {{ vrf_b }}
- ip address {{ ip_address_pe1_10 }} {{ mask_4 }}
  no sh
