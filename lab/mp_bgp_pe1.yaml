@@ -1,5 +1,5 @@
 ---
-- name: Provision VRF A
+- name: Provision MP-BGP For PE1
   gather_facts: no
   hosts: sjc
   connection: local
@@ -30,7 +30,7 @@
           - neighbor {{ ip_loopback }} activate
           - neighbor {{ ip_loopback }} send-community extended
           - exit-address-family
-        parents: ['ip vrf {{ bgp_as_number }}']
+        parents: ['router bgp {{ bgp_as_number }}']
         match: exact
 
     - name: run show bgp remote devices
