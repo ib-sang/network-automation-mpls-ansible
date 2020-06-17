@@ -22,7 +22,7 @@
   tasks:
     - name: Create VRF
       ios_config:
-        provider: "{{ provider }}"
+        provider: "{{ credentials }}"
         authorize: yes
         lines:
           - rd {{ rd_id }}
