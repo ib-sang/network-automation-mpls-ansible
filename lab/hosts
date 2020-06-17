@@ -16,3 +16,4 @@ ansible_connection=local
 ansible_ssh_pass=cisco
 snmp_community=cisco
 os=ios
+ansible_python-interpreter: "usr/bin/env python"
