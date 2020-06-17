@@ -1,10 +1,19 @@
 ---
-ios_provider:
-  username:  "{{ansible_user}}"
-  password:  "{{ansible_ssh_pass}}"
-  host:      "{{ip|default(ansible_host)|default(inventory_hostname)}}"
-  transport: cli
-  
+provider:
+  host: "{{ ansible_host }}"
+  username: "{{ ansible_user }}"
+  auth_pass: "{{ ansible_ssh_pass }}"
+  password: "{{ ansible_ssh_pass }}"
+  timeout: 120
+enable_secret: C1sco123
+local_auth_accounts:
+  - username: admin
+    password: admin
+    privilege_level: 15
+  - username: jacob
+    password: jacob
+    privilege_level: 15
+
 interface_GigabitEthernet_00: 0/0
 interface_GigabitEthernet_10: 1/0
 interface_GigabitEthernet_20: 2/0

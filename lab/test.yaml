@@ -1,7 +1,7 @@
 ---
 - name: Gather facts (Cisco)
   gather_facts: no
-  hosts: edgep1
+  hosts: pedgeL
   vars:
     creds:
         host: "{{ ansible_host }}"

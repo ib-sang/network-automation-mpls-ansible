@@ -13,4 +13,13 @@ all:
         PE2:
           ansible_host: 192.168.200.22
 
+    pedgeL:
+      hosts:
+        PE1:
+          ansible_host: 192.168.200.21
+    pedgeR:
+      hosts:
+        PE2:
+          ansible_host: 192.168.200.22
+
   
