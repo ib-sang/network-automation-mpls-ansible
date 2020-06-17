@@ -45,7 +45,7 @@
       ios_l3_interface:
         provider: "{{ credentials }}"
         name: "{{ int_name }}" 
-        ipv4: "{{ int_ip }}" 
+        ipv4: 10.255.10.1/30
 
     - name: Run 'show VRF'
       ios_command:
