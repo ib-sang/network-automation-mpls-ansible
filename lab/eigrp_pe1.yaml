@@ -55,7 +55,7 @@
         lines:
           - ip vrf forwarding B
           - no shut
-          - ip address {{ ip_add }} {{mask_4 }}
+          - ip address 10.255.20.1 255.255.255.252
         parents: ['interface {{ int_forw }}']
         match: exact
 
