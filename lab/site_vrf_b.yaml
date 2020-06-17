@@ -42,10 +42,11 @@
 
     - name: Run 'show VRF'
       ios_command:
-        provider: "{{ credentials }}"
         authorize: yes
         commands:
           - show vrf
+        provider: "{{ credentials }}"
+      register: output
 
     - debug:
-        msg: "{{ vrf.a.stdout_lines }}"    
+        msg: "{{ output.stdout_lines }}"    
