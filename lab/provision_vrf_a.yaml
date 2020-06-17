@@ -43,6 +43,7 @@
 
     - name: configure interface settings
       ios_config:
+        provider: "{{ credentials }}"
         lines:
           - description test interface
           - ip address 172.31.1.1 255.255.255.0
