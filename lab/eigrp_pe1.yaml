@@ -19,7 +19,7 @@
     network_prefix_21: 10.255.21.0
     network_prefix_10: 10.255.10.0
     network_prefix_11: 10.255.11.0
-    mask_4: 255.225.255.252
+    mask_4: 255.255.255.252
     vrf_b: B
     int_forw: GigabitEthernet1/0 
     ip_add: 10.255.20.1
@@ -55,7 +55,7 @@
         lines:
           - ip vrf forwarding B
           - no shut
-          - ip address 10.255.20.1 255.255.255.252
+          - ip address 10.255.20.1 {{ mask_4 }}
         parents: ['interface {{ int_forw }}']
         match: exact
 
