@@ -9,10 +9,10 @@
 # * Each node has dictionary of interfaces, each interface has key ip (prefix)
 
 
-C1:
-  rd: "64500:1"
-  nodes:
-    PE1: 
-      Loopback1: { ip: 172.16.1.1/24 }
-    PE2:
-      Loopback1: { ip: 172.16.2.1/24 }
+- C1:
+    rd: "64500:1"
+    nodes:
+      PE1: 
+        Loopback1: { ip: 172.16.1.1/24 }
+      PE2:
+        Loopback1: { ip: 172.16.2.1/24 }
