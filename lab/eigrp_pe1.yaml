@@ -59,16 +59,3 @@
         parents: ['interface {{ int_forw }}']
         match: exact
 
-
-    - name: run show bgp remote devices
-      ios_command:
-        authorize: yes
-        commands:
-          - show vrf {{ vrf_b }}
-          - show bgp all
-        provider: "{{ credentials }}"
-      register: output
-
-    - debug:
-        msg: "{{ output.stdout_lines }}"    
-

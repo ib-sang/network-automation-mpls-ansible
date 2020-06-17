@@ -16,7 +16,7 @@
     network_wildcard_mask_3: 0.0.0.3
     autonomous_system_200: 200
     network_prefix_21: 10.255.21.0
-    mask_4: 255.225.255.252
+    mask_4: 255.255.255.252
     vrf_b: B
     int_forw: GigabitEthernet1/0 
     ip_add: 10.255.21.1
