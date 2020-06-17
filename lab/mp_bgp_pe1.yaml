@@ -10,11 +10,10 @@
       password: "{{ password }}"
       timeout: 180
 
-    rd_id: '10.255.255.20:1'
-    rt_imp: '10.255.255.20:1'
-    rt_exp: '10.255.255.20:1'
-    vrf_name: A
-    int_name: GigabitEthernet1/0
+    bgp_as_number: 64512
+    ip_loopback: 10.255.255.12
+    mask_4: 255.225.255.252
+
 
   tasks:
     - name: Create configurations MP-BGP
@@ -22,10 +21,16 @@
         provider: "{{ credentials }}"
         authorize: yes
         lines:
-          - rd {{ rd_id }}
-          - route-target export {{ rt_exp }}
-          - route-target import {{ rt_imp }}
-        parents: ['ip vrf {{ vrf_name }}']
+          - neighbor {{ ip_loopback }} remote-as {{ bgp_as_number }}
+          - neighbor {{ ip_loopback }} update-source Loopback0
+          - address-family ipv4
+          - neighbor {{ ip_loopback }} activate
+          - exit-address-family
+          - address-family vpnv4
+          - neighbor {{ ip_loopback }} activate
+          - neighbor {{ ip_loopback }} send-community extended
+          - exit-address-family
+        parents: ['ip vrf {{ bgp_as_number }}']
         match: exact
 
     - name: run show bgp remote devices

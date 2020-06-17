@@ -20,7 +20,7 @@ interface_GigabitEthernet_20: 2/0
 interface_GigabitEthernet_30: 3/0
 interface_GigabitEthernet_40: 4/0
 interface_GigabitEthernet_50: 5/0
-bgp_as_number: 64512
+
 bgp_neighbor_community: extended
 eigrp_as_number: 200
 eigrp_metric: 1
@@ -40,7 +40,7 @@ xconnect_encapsulation_mpls: mpls
 xconnect_encapsulation_ppp: ppp
 xconnect_encapsulation_hdlc: hdlc
 xconnect_vcid_100: 100
-mask_4: 255.225.255.252
+
 mask_1: 255.225.255.255
 network_wildcard_mask_3: 0.0.0.3
 autonomous_system_200: 200
