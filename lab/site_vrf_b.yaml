@@ -1,7 +1,7 @@
 ---
 - name: Provision VRF A
   gather_facts: no
-  hosts: all
+  hosts: sjc
   connection: local
   vars:
     credentials:
