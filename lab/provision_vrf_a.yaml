@@ -41,8 +41,10 @@
         parents: ['interface {{ int_name }}']
         match: exact
 
-    - name: Configure IP address GigabitEthernet0/0
-      ipadm_addr: addr={{ int_ip }} addrobj={{ int_name }} state=up
+    - name: Set GigabitEthernet0/0 IPv4 address
+      ios_l3_interface:
+        name: {{ int_name }}
+        ipv4: {{ int_ip }}
 
     - name: Run 'show VRF'
       ios_command:
