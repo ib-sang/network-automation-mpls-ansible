@@ -8,7 +8,7 @@
       host: "{{ ansible_host }}"
       username: "{{ username }}"
       password: "{{ password }}"
-      timeout: 30
+      timeout: 180
 
   #  I decided to enter MPLS VPN variables directly into the Playbook.  There are other options of course
   #  These 5 variables are all that is needed to get a basic VRF enabled, add the RD and RT,
@@ -43,11 +43,11 @@
 
     - name: Set GigabitEthernet0/0 IPv4 address
       ios_config:
-        provider: "{{ credentials }}"
         network_interfaces:
           - device: "{{ int_name }}"
             address: 192.168.10.128
             netmask: 255.255.255.0
+        provider: "{{ credentials }}"
 
     - name: Run 'show VRF'
       ios_command:
