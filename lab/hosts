@@ -9,6 +9,8 @@ edge-p1 ansible_host=192.168.122.11
 edge-p2 ansible_host=192.168.122.12
 
 [all:vars]
+username=admin
+password=admin
 ansible_user=admin
 #ansible_connection=local
 ansible_ssh_pass=admin
