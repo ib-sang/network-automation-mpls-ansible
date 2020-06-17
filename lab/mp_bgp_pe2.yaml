@@ -1,5 +1,5 @@
 ---
-- name: Provision MP-BGP For PE1
+- name: Provision MP-BGP For PE2
   gather_facts: no
   hosts: pedgeR
   connection: local

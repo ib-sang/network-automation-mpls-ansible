@@ -1,5 +1,5 @@
 ---
-- name: Provision EIGRP
+- name: Provision OSPF For PE1
   gather_facts: no
   hosts: pedgeL
   connection: local
