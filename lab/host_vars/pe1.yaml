@@ -1,2 +1,14 @@
----
-test_variable: 123
+- name: configure a vrf named management
+  ios_vrf:
+    name: management
+    description: oob mgmt vrf
+    interfaces:
+      - Management1
+
+- name: Creates a list of import and export route targets for the VRF with the same parameters
+  ios_vrf:
+    name: test_both
+    rd: 1:100
+    route_both:
+      - 1:100
+      - 3:100

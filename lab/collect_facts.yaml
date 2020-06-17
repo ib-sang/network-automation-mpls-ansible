@@ -19,9 +19,3 @@
     - debug:
         msg: "{{ ansible_net_hostname }}, version: {{ ansible_net_version }}"
 
-    - debug:
-        msg: "112"
-
-      tags:
-        - debug
-

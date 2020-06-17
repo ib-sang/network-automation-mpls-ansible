@@ -1,6 +1,20 @@
 ---
-username: admin
-password: admin
+provider:
+  host: "{{ ansible_host }}"
+  username: "{{ ansible_user }}"
+  auth_pass: "{{ ansible_ssh_pass }}"
+  password: "{{ ansible_ssh_pass }}"
+  timeout: 120
+local_auth_accounts:
+  - username: admin
+    password: admin
+    privilege_level: 15
+  - username: adminib
+    password: adminib
+    privilege_level: 15 
+
+
+    
 interface_GigabitEthernet_00: 0/0
 interface_GigabitEthernet_10: 1/0
 interface_GigabitEthernet_20: 2/0
