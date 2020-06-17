@@ -1,0 +1,3 @@
+---
+- import_playbook: site_vrf_a.yaml
+- import_playbook: site_vrf_b.yaml

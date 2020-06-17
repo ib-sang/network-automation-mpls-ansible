@@ -1,5 +1,5 @@
 ---
-- name: Provision VRF A
+- name: Provision VRF B
   gather_facts: no
   hosts: sjc
   connection: local
