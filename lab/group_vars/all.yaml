@@ -6,9 +6,6 @@ local_auth_accounts:
   - username: admin
     password: admin
     privilege_level: 15
-
-
-
 interface_GigabitEthernet_00: 0/0
 interface_GigabitEthernet_10: 1/0
 interface_GigabitEthernet_20: 2/0

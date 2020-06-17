@@ -42,11 +42,10 @@
         match: exact
 
     - name: Set GigabitEthernet0/0 IPv4 address
-      ios_static_route:    
+      ios_config:
         provider: "{{ credentials }}"
-        prefix: 192.168.2.0
-        mask: 255.255.255.0
-        
+        src: templates/ios_ipv4_pe1.j2
+
     - name: Run 'show VRF'
       ios_command:
         provider: "{{ credentials }}"
