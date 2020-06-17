@@ -1,5 +1,5 @@
 ---
-- name: Provision MP-BGP For PE1
+- name: Provision EIGRP
   gather_facts: no
   hosts: pedgeL
   connection: local
@@ -11,35 +11,64 @@
       timeout: 180
 
     bgp_as_number: 64512
-    ip_loopback: 10.255.255.12
+    eigrp_as_number: 200
+    eigrp_metric: 1
+    network_wildcard_mask_3: 0.0.0.3
+    autonomous_system_200: 200
+    network_prefix_20: 10.255.20.0
+    network_prefix_21: 10.255.21.0
+    network_prefix_10: 10.255.10.0
+    network_prefix_11: 10.255.11.0
     mask_4: 255.225.255.252
+    vrf_b: B
+    int_forw: GigabitEthernet1/0 
+    ip_add: 10.255.20.1
 
 
   tasks:
-    - name: Create configurations MP-BGP
+    - name: Create configurations EIGRP
       ios_config:
         provider: "{{ credentials }}"
         authorize: yes
         lines:
-          - neighbor {{ ip_loopback }} remote-as {{ bgp_as_number }}
-          - neighbor {{ ip_loopback }} update-source Loopback0
-          - address-family ipv4
-          - neighbor {{ ip_loopback }} activate
-          - exit-address-family
-          - address-family vpnv4
-          - neighbor {{ ip_loopback }} activate
-          - neighbor {{ ip_loopback }} send-community extended
-          - exit-address-family
-        parents: ['router bgp {{ bgp_as_number }}']
+          - address-family ipv4 vrf {{ vrf_b }}
+          - redistribute bgp {{ bgp_as_number }}
+          - network {{ network_prefix_20 }} {{ network_wildcard_mask_3 }}
+          - autonomous-system {{ autonomous-system }}
+        parents: ['router eigrp  {{ eigrp_as_number }}']
         match: exact
+
+    - name: Create  redistribute Router eigrp on bgp 64512
+      ios_config:
+        provider: "{{ credentials }}"
+        authorize: yes
+        lines:
+          - address-family ipv4 vrf {{ vrf_b }}
+          - redistribute eigrp {{ eigrp_as_number }}
+        parents: ['router bgp  {{ bgp_as_number }}']
+        match: exact
+
+    - name: Create Forwarding vrf B on interface
+      ios_config:
+        provider: "{{ credentials }}"
+        authorize: yes
+        lines:
+          - ip vrf forwarding B
+          - no shut
+          - ip address {{ ip_add }} {{mask_4 }}
+        parents: ['interface {{ int_forw }}']
+        match: exact
+
 
     - name: run show bgp remote devices
       ios_command:
         authorize: yes
         commands:
+          - show vrf {{ vrf_b }}
           - show bgp all
         provider: "{{ credentials }}"
       register: output
 
     - debug:
         msg: "{{ output.stdout_lines }}"    
+

@@ -22,8 +22,7 @@ interface_GigabitEthernet_40: 4/0
 interface_GigabitEthernet_50: 5/0
 
 bgp_neighbor_community: extended
-eigrp_as_number: 200
-eigrp_metric: 1
+
 ospf_as_number: 2
 ospf_area_10: 10
 ospf_metric_1: 1
@@ -42,12 +41,7 @@ xconnect_encapsulation_hdlc: hdlc
 xconnect_vcid_100: 100
 
 mask_1: 255.225.255.255
-network_wildcard_mask_3: 0.0.0.3
-autonomous_system_200: 200
-network_prefix_20: 10.255.20.0
-network_prefix_21: 10.255.21.0
-network_prefix_10: 10.255.10.0
-network_prefix_11: 10.255.11.0
+
 interface_loopback0_pe1: 10.255.255.11
 ip_address_pe1_00: 10.255.10.1
 ip_address_pe1_10: 10.255.20.1
