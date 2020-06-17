@@ -13,11 +13,12 @@
   #  I decided to enter MPLS VPN variables directly into the Playbook.  There are other options of course
   #  These 5 variables are all that is needed to get a basic VRF enabled, add the RD and RT,
   #  apply the VRF to an interface of choice, and then add the address-family to BGP (could be other protocol)
-    rd_id: '1:1'
-    rt_imp: '1:1'
-    rt_exp: '1:1'
-    vrf_name: ansible
+    rd_id: '10.255.255.20:1'
+    rt_imp: '10.255.255.20:1'
+    rt_exp: '10.255.255.20:1'
+    vrf_name: A
     int_name: GigabitEthernet0/0
+    int_ip: '10.255.10.1'
 
   tasks:
     - name: Create VRF
@@ -30,7 +31,7 @@
           - route-target import {{ rt_imp }}
           - address-family ipv4
           - exit-address-family
-        parents: ['vrf definition {{ vrf_name }}']
+        parents: ['ip vrf {{ vrf_name }}']
         match: exact
 
     - name: Create and Attach VRF to Interface
@@ -39,6 +40,8 @@
         authorize: yes
         lines:
           - vrf forwarding {{ vrf_name }}
+          - ip address {{ int_ip }} {{ mask_4 }}
+          - no sh
         parents: ['interface {{ int_name }}']
         match: exact
 
@@ -48,3 +51,6 @@
         authorize: yes
         commands:
           - show vrf
+
+    - debug:
+      msg: "{{ vrf.a.stdout_lines }}"    
