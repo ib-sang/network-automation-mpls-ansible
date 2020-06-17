@@ -39,14 +39,4 @@
           - ip vrf forwarding {{ vrf_name }}
         parents: ['interface {{ int_name }}']
         match: exact
-
-    - name: Run 'show VRF'
-      ios_command:
-        authorize: yes
-        commands:
-          - show vrf
-        provider: "{{ credentials }}"
-      register: output
-
-    - debug:
-        msg: "{{ output.stdout_lines }}"    
+  
