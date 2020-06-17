@@ -7,7 +7,7 @@
 #   - common parameters (RD, RT)
 #   - dictionary of nodes
 # * Each node has dictionary of interfaces, each interface has key ip (prefix)
-
+---
 C1:
   rd: "10.255.255.20:1"
   nodes:
