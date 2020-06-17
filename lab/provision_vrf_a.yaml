@@ -35,7 +35,7 @@
 
     - name: Create and Attach VRF to Interface
       ios_config:
-        provider: "{{ provider }}"
+        provider: "{{ credentials }}"
         authorize: yes
         lines:
           - vrf forwarding {{ vrf_name }}
@@ -44,7 +44,7 @@
 
     - name: Run 'show VRF'
       ios_command:
-        provider: "{{ provider }}"
+        provider: "{{ credentials }}"
         authorize: yes
         commands:
           - show vrf
