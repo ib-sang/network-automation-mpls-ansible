@@ -28,7 +28,6 @@
         provider: "{{ credentials }}"
         authorize: yes
         lines:
-          - address-family ipv4 vrf {{ vrf_b }}
           - redistribute bgp {{ bgp_as_number }} subnets
           - network {{ network_prefix_10 }} {{ network_wildcard_mask_3 }} area {{ area }}
         parents: ['router ospf  {{ ospf_as_number }} vrf {{ vrf_a }}']
