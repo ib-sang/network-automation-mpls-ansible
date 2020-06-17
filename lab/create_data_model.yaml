@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: sjc
   gather_facts: no
   vars_files: [ fabric.yaml ]
   tasks:
