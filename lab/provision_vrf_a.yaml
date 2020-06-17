@@ -43,6 +43,7 @@
 
     - name: Set GigabitEthernet0/0 IPv4 address
       ios_l3_interface:
+        provider: "{{ credentials }}"
         name: "{{ int_name }}" 
         ipv4: "{{ int_ip }}" 
 
