@@ -4,9 +4,6 @@
   hosts: access
   connection: local
   vars:
-    credentials:
-      host: "{{ ansible_host }}"
-      timeout: 30
   #  I decided to enter MPLS VPN variables directly into the Playbook.  There are other options of course
   #  These 5 variables are all that is needed to get a basic VRF enabled, add the RD and RT,
   #  apply the VRF to an interface of choice, and then add the address-family to BGP (could be other protocol)
