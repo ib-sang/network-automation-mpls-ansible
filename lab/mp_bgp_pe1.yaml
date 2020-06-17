@@ -1,7 +1,7 @@
 ---
 - name: Provision MP-BGP For PE1
   gather_facts: no
-  hosts: sjc
+  hosts: pedgeL
   connection: local
   vars:
     credentials:
