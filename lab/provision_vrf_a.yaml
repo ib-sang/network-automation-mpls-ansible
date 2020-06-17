@@ -42,10 +42,12 @@
         match: exact
 
     - name: Set GigabitEthernet0/0 IPv4 address
-      ios_l3_interface:
+      ios_config:
         provider: "{{ credentials }}"
-        name: "{{ int_name }}" 
-        ipv4: 10.255.10.1/30
+        lines:
+          - ip address 10.255.10.1 255.255.255.252
+        parents: ['interface {{ int_name }}']
+        match: exact
 
     - name: Run 'show VRF'
       ios_command:
