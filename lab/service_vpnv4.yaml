@@ -7,9 +7,9 @@
 #   - common parameters (RD, RT)
 #   - dictionary of nodes
 # * Each node has dictionary of interfaces, each interface has key ip (prefix)
+---
 
-
-- C1:
+  C1:
     rd: "64500:1"
     nodes:
       PE1: 
