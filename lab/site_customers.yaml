@@ -1,7 +1,7 @@
 ---
-- name: Provision all sites L3VPN
 - import_playbook: site_vrf_a.yaml
 - import_playbook: site_vrf_b.yaml
+- name: Provision show VRF 
   gather_facts: no
   hosts: sjc
   connection: local
