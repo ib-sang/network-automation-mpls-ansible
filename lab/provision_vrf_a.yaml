@@ -41,10 +41,12 @@
         parents: ['interface {{ int_name }}']
         match: exact
 
-    - name: Set GigabitEthernet0/0 IPv4 address
+    - name: configure interface settings
       ios_config:
-        provider: "{{ credentials }}"
-        src: templates/ios_ipv4_pe1.j2
+        lines:
+          - description test interface
+          - ip address 172.31.1.1 255.255.255.0
+        parents: interface GigabitEthernet0/0
 
     - name: Run 'show VRF'
       ios_command:
