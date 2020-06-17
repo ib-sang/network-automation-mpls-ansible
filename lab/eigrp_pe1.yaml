@@ -54,8 +54,8 @@
         authorize: yes
         lines:
           - ip vrf forwarding B
-          - no shut
-          - ip address 10.255.20.1 {{ mask_4 }}
+          - no shutdown
+          - ip address {{ ip_add }} {{ mask_4 }}
         parents: ['interface {{ int_forw }}']
         match: exact
 
