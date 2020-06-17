@@ -11,7 +11,7 @@
       timeout: 180
 
     bgp_as_number: 64512
-    ip_loopback: 10.255.255.12
+    ip_loopback: 10.255.255.11
     mask_4: 255.225.255.252
 
 
