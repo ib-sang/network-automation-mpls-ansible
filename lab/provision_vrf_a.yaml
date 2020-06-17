@@ -44,10 +44,10 @@
     - name: Set GigabitEthernet0/0 IPv4 address
       ios_config:
         provider: "{{ credentials }}"
-        lines:
-          - ip address 10.255.10.1 255.255.255.252
-        parents: ['interface {{ int_name }}']
-        match: exact
+        network_interfaces:
+          - device: "{{ int_name }}"
+            address: 192.168.10.128
+            netmask: 255.255.255.0
 
     - name: Run 'show VRF'
       ios_command:
