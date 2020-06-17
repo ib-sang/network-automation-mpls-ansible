@@ -53,4 +53,4 @@
           - show vrf
 
     - debug:
-      msg: "{{ vrf.a.stdout_lines }}"    
+        msg: "{{ vrf.a.stdout_lines }}"    
