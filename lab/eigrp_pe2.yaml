@@ -50,7 +50,7 @@
         provider: "{{ credentials }}"
         authorize: yes
         lines:
-          - ip vrf forwarding B
+          - ip vrf forwarding {{ vrf_b }}
           - no shutdown
           - ip address {{ ip_add }} {{mask_4 }}
         parents: ['interface {{ int_forw }}']
