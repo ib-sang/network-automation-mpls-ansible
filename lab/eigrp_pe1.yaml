@@ -32,4 +32,14 @@
           - exit-address-family
         parents: ['router bgp {{ bgp_as_number }}']
         match: exact
- 
+
+    - name: run show bgp remote devices
+      ios_command:
+        authorize: yes
+        commands:
+          - show bgp all
+        provider: "{{ credentials }}"
+      register: output
+
+    - debug:
+        msg: "{{ output.stdout_lines }}"    
