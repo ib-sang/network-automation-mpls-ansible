@@ -1,12 +1,9 @@
-[local]
-localhost ansible_connection=local ansible_python_interpreter="/usr/bin/env python"
+[edgep12]
+edge-p1 ansible_host=192.168.122.11
+edge-p2 ansible_host=192.168.122.12
 
-[sjc]
-sjc-p1 ansible_host=192.168.122.11
-sjc-p2 ansible_host=192.168.122.12
+[edgep1]
+edge-p1 ansible_host=192.168.122.11
 
-[sjc:vars]
-ansible_connection=local
-ansible_python_interpreter="/usr/bin/env python"
-username=admin
-password=admin
+[edgep2]
+edge-p2 ansible_host=192.168.122.12

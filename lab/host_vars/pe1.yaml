@@ -1,14 +1,13 @@
-- name: configure a vrf named management
-  ios_vrf:
-    name: management
-    description: oob mgmt vrf
-    interfaces:
-      - Management1
+- name: Set GigabitEthernet0/0 IPv4 address
+  ios_config:
+    lines:
+      - ip add 10.255.10.1 255.255.255.252
+      - no shutdown
+    parents: interface GigabitEthernet0/0
 
-- name: Creates a list of import and export route targets for the VRF with the same parameters
-  ios_vrf:
-    name: test_both
-    rd: 1:100
-    route_both:
-      - 1:100
-      - 3:100
+- name: Set GigabitEthernet2/0 IPv4 address
+  ios_config:
+    lines:
+      - ip add 10.255.20.1 255.255.255.252
+      - no shutdown
+    parents: interface GigabitEthernet2/0

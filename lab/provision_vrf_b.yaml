@@ -36,16 +36,9 @@
         provider: "{{ credentials }}"
         authorize: yes
         lines:
-          - vrf forwarding {{ vrf_name }}
+          - ip vrf forwarding {{ vrf_name }}
         parents: ['interface {{ int_name }}']
         match: exact
-
-    - name: configure interface settings
-      ios_config:
-        provider: "{{ credentials }}"
-        lines:
-          - description test interface
-        parents: interface GigabitEthernet2/0
 
     - name: Run 'show VRF'
       ios_command:

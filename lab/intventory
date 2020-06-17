@@ -1,6 +1,0 @@
-[access]
-PE-7200 ansible_host=192.168.200.21 ansible_user=user ansible_ssh_pass=pass
-PE-7200 ansible_host=192.168.200.22 ansible_user=user ansible_ssh_pass=pass
-
-[distribution]
-D3-3850 ansible_host=10.10.10.247 ansible_user=user ansible_ssh_pass=pass
