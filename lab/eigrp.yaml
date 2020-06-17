@@ -1,6 +1,6 @@
 ---
-- import_playbook: mp_bgp_pe1.yaml
-- import_playbook: mp_bgp_pe2.yaml
+- import_playbook: eigrp_pe1.yaml
+- import_playbook: eigrp_pe2.yaml
 - name: Provision Run show bgp
   gather_facts: no
   hosts: sjc
