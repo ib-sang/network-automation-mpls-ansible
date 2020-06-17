@@ -18,7 +18,7 @@
     rt_exp: '10.255.255.20:1'
     vrf_name: A
     int_name: GigabitEthernet0/0
-    int_ip: '10.255.10.1'
+    int_ip: '10.255.10.1/30'
 
   tasks:
     - name: Create VRF
@@ -43,7 +43,7 @@
 
     - name: Configure IP address GigabitEthernet0/0
       ipadm_addr: addr={{ int_ip }} addrobj={{ int_name }} state=up
-      
+
     - name: Run 'show VRF'
       ios_command:
         provider: "{{ credentials }}"
