@@ -38,11 +38,12 @@
         authorize: yes
         lines:
           - vrf forwarding {{ vrf_name }}
-          - ip address {{ int_ip }} {{ mask_4 }}
-          - no sh
         parents: ['interface {{ int_name }}']
         match: exact
 
+    - name: Configure IP address GigabitEthernet0/0
+      ipadm_addr: addr={{ int_ip }} addrobj={{ int_name }} state=up
+      
     - name: Run 'show VRF'
       ios_command:
         provider: "{{ credentials }}"
