@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   gather_facts: no
-  vars_files: [ fabric.yml ]
+  vars_files: [ fabric.yaml ]
   tasks:
   - name:   Create per-node data model from fabric data model
-    template: src=model/nodes.j2 dest=./nodes.yml
+    template: src=model/nodes.j2 dest=./nodes.yaml
