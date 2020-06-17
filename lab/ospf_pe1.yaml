@@ -11,14 +11,14 @@
       timeout: 180
 
     bgp_as_number: 64512
-    eigrp_as_number: 200
-    eigrp_metric: 1
+    ospf_as_number: 2
+    area: 10
+    metric: 1
     network_wildcard_mask_3: 0.0.0.3
-    autonomous_system_200: 200
-    network_prefix_11: 10.255.11.0
+    network_prefix_10: 10.255.10.0
     mask_4: 255.255.255.252
     vrf_a: A
-    int_forw: GigabitEthernet1/0 
+    int_forw: GigabitEthernet0/0 
     ip_add: 10.255.10.1
 
 
@@ -29,10 +29,9 @@
         authorize: yes
         lines:
           - address-family ipv4 vrf {{ vrf_b }}
-          - redistribute bgp {{ bgp_as_number }}
-          - network {{ network_prefix_20 }} {{ network_wildcard_mask_3 }}
-          - autonomous-system {{ autonomous_system_200 }}
-        parents: ['router eigrp  {{ eigrp_as_number }}']
+          - redistribute bgp {{ bgp_as_number }} subnets
+          - network {{ network_prefix_10 }} {{ network_wildcard_mask_3 }} area {{ area }}
+        parents: ['router ospf  {{ ospf_as_number }} vrf {{ vrf_a }}']
         match: exact
 
     - name: Create  redistribute Router eigrp on bgp 64512
@@ -40,9 +39,9 @@
         provider: "{{ credentials }}"
         authorize: yes
         lines:
-          - address-family ipv4 vrf {{ vrf_b }}
-          - redistribute eigrp {{ eigrp_as_number }}
-        parents: ['router bgp  {{ bgp_as_number }}']
+          - address-family ipv4 vrf {{ vrf_a }}
+          - redistribute ospf {{ ospf_as_number }} metric {{ metric }}
+        parents: ['router bgp {{ bgp_as_number }}']
         match: exact
 
     - name: Create Forwarding vrf B on interface
@@ -55,4 +54,3 @@
           - ip address {{ ip_add }} {{ mask_4 }}
         parents: ['interface {{ int_forw }}']
         match: exact
-
