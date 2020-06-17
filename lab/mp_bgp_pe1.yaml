@@ -10,9 +10,6 @@
       password: "{{ password }}"
       timeout: 180
 
-  #  I decided to enter MPLS VPN variables directly into the Playbook.  There are other options of course
-  #  These 5 variables are all that is needed to get a basic VRF enabled, add the RD and RT,
-  #  apply the VRF to an interface of choice, and then add the address-family to BGP (could be other protocol)
     rd_id: '10.255.255.20:1'
     rt_imp: '10.255.255.20:1'
     rt_exp: '10.255.255.20:1'
@@ -20,7 +17,7 @@
     int_name: GigabitEthernet1/0
 
   tasks:
-    - name: Create VRF A
+    - name: Create configurations MP-BGP
       ios_config:
         provider: "{{ credentials }}"
         authorize: yes
@@ -31,20 +28,11 @@
         parents: ['ip vrf {{ vrf_name }}']
         match: exact
 
-    - name: Create and Attach VRF B to Interface
-      ios_config:
-        provider: "{{ credentials }}"
-        authorize: yes
-        lines:
-          - ip vrf forwarding {{ vrf_name }}
-        parents: ['interface {{ int_name }}']
-        match: exact
-
-    - name: Run 'show VRF'
+    - name: run show bgp remote devices
       ios_command:
         authorize: yes
         commands:
-          - show vrf
+          - show bgp all
         provider: "{{ credentials }}"
       register: output
 

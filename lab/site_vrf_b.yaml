@@ -20,7 +20,7 @@
     int_name: GigabitEthernet2/0
 
   tasks:
-    - name: Create VRF
+    - name: Create VRF B
       ios_config:
         provider: "{{ credentials }}"
         authorize: yes
@@ -31,7 +31,7 @@
         parents: ['ip vrf {{ vrf_name }}']
         match: exact
 
-    - name: Create and Attach VRF to Interface
+    - name: Create and Attach VRF B to Interface
       ios_config:
         provider: "{{ credentials }}"
         authorize: yes
