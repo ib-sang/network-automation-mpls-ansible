@@ -1,8 +1,8 @@
 #
 # Nodes in the network
 #
-{% macro internal_link(name,ip,cost) %}
-{{ name }}: { ip: {{ip}} {% if cost %}, cost: {{cost}}{% endif %} }{% endmacro %}
+{% macro internal_link(name,ip) %}
+{{ name }}: { ip: {{ip}} }{% endmacro %}
 {% macro ibgp_session(from,to,ip) %}
 {% if from != to %}
 - { rid: {{to}}, ip: "{{ip}}" }{% endif %}{% endmacro %}
