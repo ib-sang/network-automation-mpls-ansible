@@ -44,7 +44,27 @@ def netconf_edit_config(m, xml, commit, retkwargs, datastore):
 
 
 def main():
+    
+    module = AnsibleModule(
+        argument_spec=dict(
+            host=dict(type='str', required=True),
+            port=dict(type='int', default=830),
+            hostkey_verify=dict(type='bool', default=True),
+            allow_agent=dict(type='bool', default=True),
+            look_for_keys=dict(type='bool', default=True),
+            datastore=dict(choices=['auto', 'candidate', 'running'], default='auto'),
+            save=dict(type='bool', default=False),
+            username=dict(type='str', required=True, no_log=True),
+            password=dict(type='str', required=True, no_log=True),
+            xml=dict(type='str', required=False),
+            src=dict(type='path', required=False),
+            timeout=dict(type='int', required=False, default=120),
+        ),
+        mutually_exclusive=[('xml', 'src')]
+    )
+    
     print('hello word')
+    
     
 if __name__ == '__main__':
     main()
