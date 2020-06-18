@@ -1,0 +1,55 @@
+---
+- name: Provision OSPF For PE1
+  gather_facts: no
+  hosts: pedgeL
+  connection: local
+  vars:
+    credentials:
+      host: "{{ ansible_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      timeout: 180
+
+    bgp_as_number: 64512
+    ospf_as_number: 2
+    area: 10
+    metric: 1
+    network_wildcard_mask_3: 0.0.0.3
+    network_prefix_10: 10.255.10.0
+    mask_4: 255.255.255.252
+    vrf_a: A
+    int_forw: GigabitEthernet0/0 
+    ip_add: 10.255.10.1
+
+
+  tasks:
+    - name: Create configurations OSPF
+      ios_config:
+        provider: "{{ credentials }}"
+        authorize: yes
+        lines:
+          - redistribute bgp {{ bgp_as_number }} subnets
+          - network {{ network_prefix_10 }} {{ network_wildcard_mask_3 }} area {{ area }}
+        parents: ['router ospf  {{ ospf_as_number }} vrf {{ vrf_a }}']
+        match: exact
+
+    - name: Create  redistribute Router eigrp on bgp 64512
+      ios_config:
+        provider: "{{ credentials }}"
+        authorize: yes
+        lines:
+          - address-family ipv4 vrf {{ vrf_a }}
+          - redistribute ospf {{ ospf_as_number }} metric {{ metric }}
+        parents: ['router bgp {{ bgp_as_number }}']
+        match: exact
+
+    - name: Create Forwarding vrf B on interface
+      ios_config:
+        provider: "{{ credentials }}"
+        authorize: yes
+        lines:
+          - ip vrf forwarding {{vrf_a}}
+          - no shutdown
+          - ip address {{ ip_add }} {{ mask_4 }}
+        parents: ['interface {{ int_forw }}']
+        match: exact
