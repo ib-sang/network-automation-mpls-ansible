@@ -10,6 +10,10 @@
     debug:
       msg: '{{ testout }}'
 
+- name: BUILD EIGRP XML DATA
+  template:
+    src: eigrp.j2
+    dest: "{{ configs_dir }}/{{ inventory_hostname }}/eigrp.xml"
 
 # - name: BUILD EIGRP NSF CLI DATA
 #   template:
