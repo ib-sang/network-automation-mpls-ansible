@@ -1,15 +1,15 @@
----
-- name: BUILD EIGRP XML DATA
-  template:
-    src: eigrp.j2
-    dest: "{{ configs_dir }}/{{ inventory_hostname }}/eigrp.xml"
+- name: test my new module
+  hosts: localhost
+  tasks:
+  - name: run the new module
+    netconf:
+      name: 'hello'
+      new: true
+    register: testout
+  - name: dump test output
+    debug:
+      msg: '{{ testout }}'
 
-- name: PUSH NETCONF TO REMOTES
-  netconf:
-    host: "{{ ansible_host }}"
-    username: "{{ ansible_user }}"
-    password: "{{ ansible_ssh_pass }}"
-    src: "{{ configs_dir }}/{{ inventory_hostname }}/eigrp.xml"
 
 # - name: BUILD EIGRP NSF CLI DATA
 #   template:
