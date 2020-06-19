@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
   - name: run the new module
-    my_test:
+    netconf:
       name: 'hello'
       new: true
     register: testout
