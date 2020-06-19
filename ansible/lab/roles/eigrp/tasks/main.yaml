@@ -1,29 +1,11 @@
----
-- name: Provision EIGRP
-  hosts: pedgeL
-  connection: local
-  vars:
-    credentials:
-      host: "{{ ansible_host }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
-      timeout: 180
+- name: BUILD EIGRP XML DATA
+  template:
+    src: eigrp.j2
+    dest: "{{ configs_dir }}/{{ inventory_hostname }}/eigrp.xml"
 
-    bgp_as_number: 64512
-    eigrp_as_number: 200
-    eigrp_metric: 1
-    network_wildcard_mask_3: 0.0.0.3
-    autonomous_system_200: 200
-    network_prefix_20: 10.255.20.0
-    mask_4: 255.255.255.252
-    vrf_b: B
-    int_forw: GigabitEthernet1/0 
-    ip_add: 10.255.20.1
-
-
-  tasks:
-
-    - name: BUILD EIGRP XML DATA
-      template:
-        src: eigrp.j2
-        dest: "{{ configs_dir }}/{{ inventory_hostname }}/eigrp.xml"
+- name: PUSH NETCONF TO REMOTES
+  netconf_config:
+    host: "{{ ansible_host }}"
+    username: "{{ ansible_user }}"
+    password: "{{ ansible_ssh_pass }}"
+    src: "{{ configs_dir }}/{{ inventory_hostname }}/eigrp.xml"
