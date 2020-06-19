@@ -1,3 +1,4 @@
+---
 - name: BUILD EIGRP XML DATA
   template:
     src: eigrp.j2
