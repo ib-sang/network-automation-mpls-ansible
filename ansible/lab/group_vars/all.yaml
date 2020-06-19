@@ -14,21 +14,32 @@ local_auth_accounts:
     password: jacob
     privilege_level: 15
 
-interface_GigabitEthernet_00: 0/0
-interface_GigabitEthernet_10: 1/0
-interface_GigabitEthernet_20: 2/0
-interface_GigabitEthernet_30: 3/0
-interface_GigabitEthernet_40: 4/0
-interface_GigabitEthernet_50: 5/0
+vrf:
+  ios_vrf:
+    - name: A
+      description: the customer A
+      rd: 10.255.255.20:1
+      route_both: 10.255.255.20:1
+    - name: B
+      description: the customer A
+      rd: 10.255.255.30:1
+      route_both: 10.255.255.30:1
+     
+
+ospf:
+  ospf_as_number: 2
+  ospf_area_10: 10
+  ospf_metric_1: 1
+  ospf_redistribute_bgp_subnets: subnets
 
 bgp_neighbor_community: extended
 
-ospf_as_number: 2
-ospf_area_10: 10
-ospf_metric_1: 1
-ospf_redistribute_bgp_subnets: subnets
-vrf_a: A
+
+
+
+
 rd_a: 10.255.255.20:1
+
 route_target_export_a: 10.255.255.20:1
 route_target_import_a: 10.255.255.20:1
 vrf_b: B

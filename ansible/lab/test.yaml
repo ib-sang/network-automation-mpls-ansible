@@ -1,17 +1,10 @@
 ---
-- name: Gather facts (Cisco)
+- name: ACCESS PROCEDURE 1
+  hosts: sjc
+  connection: local
   gather_facts: no
-  hosts: pedgeL
   vars:
-    creds:
-        host: "{{ ansible_host }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
-
-  tasks:
-    - ios_facts:
-        provider: "{{ creds }}"
-      tags: facts_only
-
-    - debug:
-        msg: "SN:   {{ ansible_net_serialnum }}"
+    provider_role: "vrf"
+  roles:
+    - name: created all vrf
+    - vrf

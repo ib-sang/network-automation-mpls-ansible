@@ -2,10 +2,9 @@
 interfaces:
   - name: GigabitEthernet0/0
     vrf: A
-    ipv4: 10.255.10.1
+    ipv4: 10.255.11.1
     ipv4_mask: 255.255.255.252
   - name: GigabitEthernet1/0
     vrf: B
-    ipv4: 10.255.20.1
+    ipv4: 10.255.21.1
     ipv4_mask: 255.255.255.0
-
