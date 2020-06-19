@@ -1,20 +1,8 @@
-- name: test my new module
+- name: BUILD EIGRP XML DATA
   template:
-      src: eigrp.j2
-      dest: "{{ configs_dir }}/{{ inventory_hostname }}/eigrp.xml"
-  hosts: localhost
-  tasks:
-  - name: run the new module
-    netconf:
-      name: 'hello'
-      new: true
-    register: testout
-  - name: dump test output
-    debug:
-      msg: '{{ testout }}'
-
-
-
+    src: eigrp.j2
+    dest: "{{ configs_dir }}/{{ inventory_hostname }}/eigrp.xml"
+    
 # - name: BUILD EIGRP NSF CLI DATA
 #   template:
 #     src: nsf.j2
