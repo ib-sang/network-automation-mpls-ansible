@@ -1,3 +1,9 @@
+- name: Find /var/log all directories
+  find:
+    paths: "{{ configs_dir }}"
+    recurse: no
+    file_type: directory
+
 - name: BUILD VRF XML DATA
   template:
     src: vrf.j2
