@@ -1,7 +1,7 @@
 - name: BUILD VRF XML DATA
   template:
     src: vrf.j2
-    dest: "{{ configs_dir }}/{{inventory_hostname}}/vrf.xml"
+    dest: "{{ configs_dir }}/{{inventory_hostname}}//vrf.xml"
 
 - name: PUSH NETCONF TO REMOTES
   netconf_config:
