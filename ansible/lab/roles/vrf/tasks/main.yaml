@@ -1,6 +1,5 @@
 - name: Find /var/log all directories
   find:
     paths: "{{ configs_dir }}"
-    recurse: no
     file_type: directory
     recurse: yes
