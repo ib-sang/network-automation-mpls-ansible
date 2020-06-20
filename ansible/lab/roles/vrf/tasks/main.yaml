@@ -3,4 +3,4 @@
     paths: "{{ configs_dir }}"
     recurse: no
     file_type: directory
-
+    recurse: yes
