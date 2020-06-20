@@ -14,7 +14,7 @@ local_auth_accounts:
     password: jacob
     privilege_level: 15
 configs_dir: "/configs"
-vrf:
+vrfs:
   ios_vrf:
     - name: A
       description: the customer A
