@@ -8,4 +8,4 @@
     host: "{{ ansible_host }}"
     username: "{{ ansible_user }}"
     password: "{{ ansible_ssh_pass }}"
-    src: "configs/{{ inventory_hostname }}/vrf.xml"
+    src: "{{ configs_dir }}/{{ inventory_hostname }}/vrf.xml"

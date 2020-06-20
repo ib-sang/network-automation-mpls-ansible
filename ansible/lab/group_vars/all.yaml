@@ -13,7 +13,7 @@ local_auth_accounts:
   - username: jacob
     password: jacob
     privilege_level: 15
-configs_dir: "/configs"
+configs_dir: "configs"
 vrfs:
   - ios_vrf:
     name: A
