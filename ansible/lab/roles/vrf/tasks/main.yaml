@@ -1,5 +1,5 @@
 - name: Find /var/log all directories
   find:
     paths: "{{ configs_dir }}"
-    patterns: ".xml"
+    patterns: "*.xml"
     recurse: yes
