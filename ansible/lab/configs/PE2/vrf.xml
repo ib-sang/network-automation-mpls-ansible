@@ -1,0 +1,23 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-native">
+    <router>
+        <vrfs>
+            <vrf xmlns="http://cisco.com/ns/yang/Cisco-IOS-vrf">
+                <vrf-name>A</vrf-name>
+                <create/>
+                <vrf-rd>10.255.255.20:1</vrf-rd>
+                <vrf-target>10.255.255.20:1</vrf-target>
+                <description>the customer A</description>        
+            </vrfs>
+            <vrf xmlns="http://cisco.com/ns/yang/Cisco-IOS-vrf">
+                <vrf-name>B</vrf-name>
+                <create/>
+                <vrf-rd>10.255.255.30:1</vrf-rd>
+                <vrf-target>10.255.255.30:1</vrf-target>
+                <description>the customer B</description>        
+            </vrf>
+        </vrfs>
+        
+    </router>
+  </native>
+</config>
