@@ -11,5 +11,8 @@
       password: "{{ password }}"
       timeout: 180
   netconf_config:
+    host: "{{ ansible_host }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    timeout: 180
     src: "{{ configs_dir }}/{{ inventory_hostname }}/vrf.xml"
-    provider: "{{ credentials }}"
