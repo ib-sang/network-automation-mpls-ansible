@@ -1,11 +1,11 @@
 - name: BUILD VRF XML DATA
   template:
     src: vrf.j2
-    dest: "configs/{{ inventory_hostname }}/vrf.xml"
+    dest: "../../configs/{{ inventory_hostname }}/vrf.xml"
 
 - name: PUSH NETCONF TO REMOTES
   netconf_config:
     host: "{{ ansible_host }}"
     username: "{{ ansible_user }}"
     password: "{{ ansible_ssh_pass }}"
-    src: "{{ configs_dir }}/{{ inventory_hostname }}/vrf.xml"
+    src: "configs/{{ inventory_hostname }}/vrf.xml"
