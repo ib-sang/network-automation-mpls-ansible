@@ -7,8 +7,8 @@
     provider_role: "vrf"
   tasks:
     - debug:
-        msg: "before we run our role"
+        msg: "before we run our role vrf"
     - import_role:
         name: vrf
     - debug:
-        msg: "after we ran our role"
+        msg: "after we ran our role vrf"
