@@ -8,7 +8,6 @@
   tasks:
     - name: run the new module
       netconf_config:
-        name: 'hello'
-        new: true
+        
 
 
