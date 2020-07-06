@@ -7,7 +7,7 @@
     provider_role: "vrf"
   tasks:
     - name: run the new module
-      my_test:
+      netconf_config:
         name: 'hello'
         new: true
 
