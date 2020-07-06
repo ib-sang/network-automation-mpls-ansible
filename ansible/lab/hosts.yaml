@@ -4,7 +4,7 @@ all:
     username: admin
     password: admin
     ansible_connection: local
-    ansible_python-interpreter: "usr/bin/env python3"
+    ansible_python-interpreter: "usr/bin/env python"
   children:
     sjc:
       hosts:
