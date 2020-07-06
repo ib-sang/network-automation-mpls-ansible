@@ -1,7 +1,7 @@
 ---
 - name: ACCESS PROCEDURE 1
   hosts: pedgeL
-   connection: local
+  connection: local
   vars:
     credentials:
       host: "{{ ansible_host }}"
