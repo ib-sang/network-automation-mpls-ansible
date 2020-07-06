@@ -1,7 +1,7 @@
 ---
 - name: ACCESS PROCEDURE 1
   hosts: sjc
-  connection: local
+  connection: netconf_cli
   gather_facts: no
   vars:
     provider_role: "vrf"
