@@ -9,30 +9,30 @@ all:
     sjc:
       hosts:
         PE1:
-          ansible_host: 192.168.200.21
+          ansible_host: 10.10.0.15
         PE2:
-          ansible_host: 192.168.200.22
+          ansible_host: 10.10.0.16
     sjc1:
       hosts:
         PE3:
-          ansible_host: 192.168.200.23
+          ansible_host: 10.10.0.17
         PE4:
-          ansible_host: 192.168.200.24      
+          ansible_host: 10.10.0.18      
 
     pedgeL:
       hosts:
         PE1:
-          ansible_host: 192.168.200.21
+          ansible_host: 10.10.0.15
     pedgeR:
       hosts:
         PE2:
-          ansible_host: 192.168.200.22
+          ansible_host: 10.10.0.16
     pedgeB:
           hosts:
-            PE2:
-              ansible_host: 192.168.200.23
+            PE3:
+              ansible_host: 10.10.0.17
     pedgeT:
       hosts:
-        PE2:
-          ansible_host: 192.168.200.24
+        PE4:
+          ansible_host: 10.10.0.18
       
