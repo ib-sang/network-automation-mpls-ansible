@@ -1,28 +1,19 @@
 ---
 - name: ACCESS PROCEDURE 1
   hosts: pedgeL
-  connection: netconf_cli
-  gather_facts: no
+   connection: local
   vars:
-    provider_role: "vrf"
+    credentials:
+      host: "{{ ansible_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      timeout: 30
+
   tasks:
-    - name: run the new module
-      netconf_config:
-        host: "{{ ansible_host }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
-        content: |
-          <config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
-              <system xmlns="urn:ietf:params:xml:ns:yang:ietf-system">
-                  <ntp>
-                      <enabled>true</enabled>
-                      <server>
-                          <name>ntp1</name>
-                          <udp><address>127.0.0.1</address></udp>
-                      </server>
-                  </ntp>
-              </system>
-          </config>
-        
+    - ios_facts:
+        provider: "{{ credentials }}"
+      name: Collect IOS facts
+      register: ios_facts
 
-
+    - debug:
+        msg: "{{ ansible_net_hostname }}, version: {{ ansible_net_version }}"
