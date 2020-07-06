@@ -17,7 +17,7 @@
     rt_imp: '10.255.255.30:1'
     rt_exp: '10.255.255.30:1'
     vrf_name: B
-    int_name: GigabitEthernet2/0
+    int_name: GigabitEthernet5
 
   tasks:
     - name: Create VRF B
