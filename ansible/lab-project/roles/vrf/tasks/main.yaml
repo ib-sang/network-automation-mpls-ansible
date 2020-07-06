@@ -16,10 +16,3 @@
             </system>
         </config>
         
-- name: PUSH NETCONF TO REMOTES
-  netconf_config:
-    host: "{{ ansible_host }}"
-    username: "{{ username }}"
-    password: "{{ password }}"
-    timeout: 180
-    src: "{{ configs_dir }}/{{ inventory_hostname }}/vrf.xml"
