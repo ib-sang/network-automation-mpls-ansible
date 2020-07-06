@@ -1,15 +1,15 @@
 #jinja2: lstrip_blocks: "true"
 <config>
-  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-native">
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
     <router>
         {% for vrf in vrfs %}
-            <vrf xmlns="http://cisco.com/ns/yang/Cisco-IOS-vrf">
+            <ios_vrf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-vrf">
                 <vrf-name>{{ vrf["name"] }}</vrf-name>
                 <create/>
                 <vrf-rd>{{ ["rd"] }}</vrf-rd>
                 <vrf-target>{{ ["route_both"] }}</vrf-target>
                 <description>{{ ["description"] }}</description>        
-            </vrf>
+            </ios_vrf>
         {% endfor %}}
     </router>
   </native>
