@@ -14,6 +14,12 @@
         provider: "{{ credentials }}"
       name: Collect IOS facts
       register: ios_facts
+    - ios_facts:
+        provider: "{{ credentials }}"
+      name: run the module netconf
+      netconf_config:
+        backup: yes
+      register: ios_facts
 
     - debug:
         msg: "{{ ansible_net_hostname }}, version: {{ ansible_net_version }}"
