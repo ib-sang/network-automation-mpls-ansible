@@ -1,16 +1,16 @@
-- name: BUILD VRF XML DATA
-  template:
-    src: vrf.j2
-    dest: "{{ configs_dir }}/{{inventory_hostname}}//vrf.xml"
-- name: wipe ntp configuration
+- name: set ntp server in the device
   netconf_config:
-    content: |
+    host: 10.0.0.15
+    username: admin
+    password: 123
+    xml: |
         <config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
             <system xmlns="urn:ietf:params:xml:ns:yang:ietf-system">
                 <ntp>
-                    <enabled>false</enabled>
-                    <server operation="remove">
+                    <enabled>true</enabled>
+                    <server>
                         <name>ntp1</name>
+                        <udp><address>127.0.0.1</address></udp>
                     </server>
                 </ntp>
             </system>
