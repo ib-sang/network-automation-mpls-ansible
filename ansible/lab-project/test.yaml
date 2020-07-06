@@ -8,6 +8,9 @@
   tasks:
     - name: run the new module
       netconf_config:
+        host: "{{ ansible_host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
         content: |
           <config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
               <system xmlns="urn:ietf:params:xml:ns:yang:ietf-system">
