@@ -1,4 +1,5 @@
 - name: set ntp server in the device
-  connection: network_cli
-  
+  netconf_config:
+    backup: yes
+  register: output
         
