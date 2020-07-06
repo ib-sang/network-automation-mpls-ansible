@@ -1,6 +1,6 @@
 ---
 - name: ACCESS PROCEDURE 1
-  hosts: sjc
+  hosts: pedgeL
   connection: netconf_cli
   gather_facts: no
   vars:
