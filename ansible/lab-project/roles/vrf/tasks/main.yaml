@@ -2,7 +2,20 @@
   template:
     src: vrf.j2
     dest: "{{ configs_dir }}/{{inventory_hostname}}//vrf.xml"
-
+- name: wipe ntp configuration
+  netconf_config:
+    content: |
+        <config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
+            <system xmlns="urn:ietf:params:xml:ns:yang:ietf-system">
+                <ntp>
+                    <enabled>false</enabled>
+                    <server operation="remove">
+                        <name>ntp1</name>
+                    </server>
+                </ntp>
+            </system>
+        </config>
+        
 - name: PUSH NETCONF TO REMOTES
   netconf_config:
     host: "{{ ansible_host }}"
