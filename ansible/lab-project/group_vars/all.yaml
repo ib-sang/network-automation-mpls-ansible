@@ -10,3 +10,4 @@ local_auth_accounts:
   - username: admin
     password: 123
     privilege_level: 15
+configs_dir: "configs"
