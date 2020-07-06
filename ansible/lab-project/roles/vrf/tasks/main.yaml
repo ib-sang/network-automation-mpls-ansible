@@ -1,5 +1,3 @@
-- name: Enable NETCONF
-  connection: network_cli
 - name: set ntp server in the device
   netconf_config:
     host: 10.0.0.15
