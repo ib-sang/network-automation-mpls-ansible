@@ -8,7 +8,7 @@
                 <vrf-rd>10.255.255.20:1</vrf-rd>
                 <vrf-target>10.255.255.20:1</vrf-target>
                 <description>the customer A</description>        
-            </vrfs>
+            </vrf>
             <vrf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-vrf">
                 <vrf-name>B</vrf-name>
                 <create/>

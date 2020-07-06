@@ -11,3 +11,15 @@ local_auth_accounts:
     password: 123
     privilege_level: 15
 configs_dir: "configs"
+vrfs:
+  - ios_vrf:
+    name: A
+    description: the customer A
+    rd: 10.255.255.20:1
+    route_both: 10.255.255.20:1
+  - ios_vrf:
+    name: B
+    description: the customer A
+    rd: 10.255.255.30:1
+    route_both: 10.255.255.30:1
+ 
