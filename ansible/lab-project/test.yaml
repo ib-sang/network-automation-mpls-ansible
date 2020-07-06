@@ -12,10 +12,6 @@
   tasks:
     - ios_facts:
         provider: "{{ credentials }}"
-      name: Collect IOS facts
-      register: ios_facts
-    - ios_facts:
-        provider: "{{ credentials }}"
       name: run the module netconf
       netconf_config:
         backup: yes
