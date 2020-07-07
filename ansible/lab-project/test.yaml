@@ -21,4 +21,4 @@
         name: GigabitEthernet4
         ipv4: 192.168.0.1/24
     - name: lock candidate
-      netconf_get:
+      netconf_config:
