@@ -22,4 +22,7 @@
         ipv4: 192.168.0.1/24
     - name: lock candidate netconf 
       netconf_config:
-        provider: "{{ credentials }}"
+        host: "{{ ansible_host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        timeout: 30
