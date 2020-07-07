@@ -10,12 +10,6 @@
       timeout: 30
 
   tasks:
-    - ios_facts:
-        provider: "{{ credentials }}"
-      name: run the module netconf
-      netconf_config:
-        backup: yes
-      register: ios_facts
-
-    - debug:
-        msg: "{{ ansible_net_hostname }}, version: {{ ansible_net_version }}"
+    name: run the module netconf
+    netconf_config:
+      backup: yes
