@@ -24,6 +24,4 @@
     - name: run the new module
       netconf_config:
         provider: "{{ credentials }}"
-        name: 'hello'
-        new: true
       register: testout
