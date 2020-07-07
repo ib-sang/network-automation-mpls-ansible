@@ -17,7 +17,7 @@ interface GigabitEthernet5/0
 !
 ip route vrf MGNT 0.0.0.0 0.0.0.0 192.168.200.1
 !
-line vty 0 5
+line vty 0 4
  privilege level 15
  login local
  transport input all

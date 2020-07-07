@@ -6,9 +6,11 @@
   vars:
     provider_role: "vrf"
   tasks:
-    - debug:
-        msg: "before we run our role vrf"
-    - import_role:
-        name: vrf
-    - debug:
-        msg: "after we ran our role vrf"
+    - name: lock candidate netconf 
+      netconf_config:
+        host: "{{ ansible_host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        timeout: 30
+        backup: yes
+      register: backup_junos_location
