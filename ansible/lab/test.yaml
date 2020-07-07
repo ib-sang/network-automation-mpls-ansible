@@ -11,15 +11,15 @@
       password: "{{ password }}"
       timeout: 30
   tasks:
-    - name: Remove GigabitEthernet0/4 IPv4 and IPv6 address
+    - name: Remove GigabitEthernet4/0 IPv4 and IPv6 address
       ios_l3_interface:
         provider: "{{ credentials }}"
-        name: GigabitEthernet0/4
+        name: GigabitEthernet4/0
         state: absent
-    - name: Set GigabitEthernet0/4 Pv4 address
+    - name: Set GigabitEthernet4/0 Pv4 address
       ios_l3_interface:
         provider: "{{ credentials }}"
-        name: GigabitEthernet0/4
+        name: GigabitEthernet4/0
         ipv4: 192.168.0.1/24
     - name: run the new module
       netconf_config:
