@@ -20,5 +20,5 @@
         provider: "{{ credentials }}"
         name: GigabitEthernet4
         ipv4: 192.168.0.1/24
-    - name: lock candidate
+    - name: lock candidate netconf 
       netconf_config:
