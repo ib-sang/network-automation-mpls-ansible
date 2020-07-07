@@ -26,3 +26,8 @@
         username: "{{ username }}"
         password: "{{ password }}"
         timeout: 30
+        backup: yes
+      register: backup_junos_location
+             
+       
+     
