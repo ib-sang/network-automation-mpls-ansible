@@ -10,22 +10,11 @@
       timeout: 30
 
   tasks:
-    - name: run the module netconf
-      netconf_config:
-        host: "{{ ansible_host }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
-        timeout: 30
-        backup: yes
-        content: |
-          <?xml version="1.0" encoding=\"UTF-8\"?>
-          <hello><capabilities>
-              <capability>u?rn:ietf:params:netconf:base:1.0</capability>
-                <capability>urn:ietf:params:netconf:capability:writeable-running:1.0</capability>
-                <capability>urn:ietf:params:netconf:ca?pability:roll?back-on-error:1.0</capability>
-                  <capability>urn:ietf:params:netconf:capability:startup:1.0</capability>
-                  <capability>urn:ietf:params:netconf:ca?pability:url:?1.0</capability>
-                  <capability>urn:cisco:params:netconf:capability:pi-data-model:1.0</capability>
-                <capability>urn:cisco:params:netconf:capabili?ty:notificati?on:1.0</capability>
-            </capabilities>
-          </hello>]]>]]>
+    - name: Remove GigabitEthernet0/3 IPv4 and IPv6 address
+      ios_l3_interface:
+        name: GigabitEthernet4
+        state: absent
+    - name: Set GigabitEthernet0/3 IPv4 address
+      ios_l3_interface:
+        name: GigabitEthernet4
+        ipv4: 192.168.0.1/24
