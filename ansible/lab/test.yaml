@@ -8,17 +8,13 @@
   tasks:
     - name: run the new module
       modtest:
-        name: 'hello'
-        new: true
-      register: testout
-    - name: dump test output
-      debug:
-        msg: '{{ testout }}'
-    - name: lock candidate netconf 
-      netconf_config:
         host: "{{ ansible_host }}"
         username: "{{ username }}"
         password: "{{ password }}"
         timeout: 30
-        backup: yes
-      register: backup_junos_location
+        name: 'hello'
+        new: true
+      register: testou
+    - name: dump test output
+      debug:
+        msg: '{{ testout }}'
