@@ -10,7 +10,7 @@
       modtest:
         name: 'hello'
         new: true
-        register: testout
+      register: testout
     - name: dump test output
       debug:
         msg: '{{ testout }}'
