@@ -10,6 +10,6 @@
       timeout: 30
 
   tasks:
-    name: run the module netconf
-    netconf_config:
-      backup: yes
+    - name: run the module netconf
+      netconf_config:
+        backup: yes
