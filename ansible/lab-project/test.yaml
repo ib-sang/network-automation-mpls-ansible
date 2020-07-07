@@ -11,5 +11,8 @@
 
   tasks:
     - name: run the module netconf
+      host: "{{ ansible_host }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
       netconf_config:
         backup: yes
