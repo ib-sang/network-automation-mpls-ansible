@@ -1,32 +1,10 @@
 ---
-- name: ACCESS PROCEDURE 1
-  hosts: sjc
-  connection: local
+- name: DISTRIBUTION PROCEDURE 4
+  hosts: distribution
+  connection: sjc
+  gather_facts: no
   vars:
-    credentials:
-      host: "{{ ansible_host }}"
-      username: "{{ username }}"
-      password: "{{ password }}"
-      timeout: 30
-
-  tasks:
-    - name: lock candidate netconf 
-      netconf_config:
-        host: "{{ ansible_host }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
-        timeout: 120
-        content: |
-            <config xmlns:xc="urn:ietf:params:xml:ns:netconf:base:1.0">
-                <system xmlns="urn:ietf:params:xml:ns:yang:ietf-system">
-                    <ntp>
-                        <enabled>false</enabled>
-                        <server operation="remove">
-                            <name>ntp1</name>
-                        </server>
-                    </ntp>
-                </system>
-            </config>
-             
-       
-     
+    switch_role: "distribution"
+  roles:
+    - hostname
+    
