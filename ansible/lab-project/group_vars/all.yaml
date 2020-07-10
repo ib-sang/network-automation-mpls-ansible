@@ -2,6 +2,7 @@
 provider:
   host: "{{ ansible_host }}"
   username: "{{ ansible_user }}"
+  auth_pass: "{{ ansible_ssh_pass }}"
   password: "{{ ansible_ssh_pass }}"
   timeout: 120
 enable_secret: C1sco123
