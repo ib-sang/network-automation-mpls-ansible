@@ -1,7 +1,7 @@
 ---
-- name: DISTRIBUTION PROCEDURE 4
-  hosts: distribution
-  connection: sjc
+- name: TEST PROCEDURE 
+  hosts: sjc
+  connection: local
   gather_facts: no
   vars:
     switch_role: "distribution"
