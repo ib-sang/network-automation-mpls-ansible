@@ -4,6 +4,7 @@ all:
     ansible_ssh_pass: "123"
     ansible_connection: netconf
     ansible_user: admin
+    ansible_network_os: ios
     ansible_python-interpreter: "usr/bin/env python"
   children:
     sjc:
