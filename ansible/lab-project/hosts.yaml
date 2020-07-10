@@ -5,6 +5,7 @@ all:
     password: "123"
     ansible_ssh_pass: pass
     ansible_connection: netconf
+    ansible_user: admin
     ansible_python-interpreter: "usr/bin/env python"
   children:
     sjc:
