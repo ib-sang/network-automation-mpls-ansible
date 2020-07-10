@@ -10,16 +10,6 @@
       timeout: 30
 
   tasks:
-    - name: Remove GigabitEthernet4 IPv4 and IPv6 address
-      ios_l3_interface:
-        provider: "{{ credentials }}"
-        name: GigabitEthernet4
-        state: absent
-    - name: Set GigabitEthernet4 Pv4 address
-      ios_l3_interface:
-        provider: "{{ credentials }}"
-        name: GigabitEthernet4
-        ipv4: 192.168.0.1/24
     - name: lock candidate netconf 
       netconf_config:
         host: "{{ ansible_host }}"
