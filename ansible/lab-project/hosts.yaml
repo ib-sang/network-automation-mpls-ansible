@@ -1,8 +1,6 @@
 ---
 all:
   vars:
-    username: admin
-    password: "123"
     ansible_ssh_pass: pass
     ansible_connection: netconf
     ansible_user: admin
