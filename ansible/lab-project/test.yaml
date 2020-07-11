@@ -1,8 +1,6 @@
 ---
 - name: TEST PROCEDURE 
   hosts: sjc
-  connection: local
-  gather_facts: no
   vars:
     switch_role: "distribution"
     ansible_connection: netconf
