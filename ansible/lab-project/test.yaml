@@ -10,4 +10,5 @@
 
   roles:
   - name: hostname
+  - name: vrf
   
