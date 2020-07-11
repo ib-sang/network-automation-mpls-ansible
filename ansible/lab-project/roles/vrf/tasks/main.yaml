@@ -1,5 +1,9 @@
-- name: set ntp server in the device
+- name: BUILD HOSTNAME XML DATA
+  template:
+    src: vrf.j2
+    dest: "{{ configs_dir }}/{{ inventory_hostname }}/vrf.xml"
+- name: PUSH NETCONF TO REMOTES
   netconf_config:
-    backup: yes
-  register: output
+    provider: "{{ provider }}"
+    src: "{{ configs_dir }}/{{ inventory_hostname }}/vrf.xml"
         
