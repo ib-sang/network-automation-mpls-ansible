@@ -1,0 +1,6 @@
+router eigrp {{ eigrp["name"] }} {{ eigrp["as"] }}
+ address-family ipv4 vrf {{ eigrp["vrf"] }}
+ redistribute bgp {{ bgp["as"] }}
+ network {{ eigrp["network"] }} {{ eigrp["wildcard"] }}
+ autonomous-system {{ eigrp["as"] }}
+  nsf
