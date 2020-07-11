@@ -15,6 +15,5 @@
       password: "{{ ansible_ssh_pass }}"
       auth_pass: "{{ ansible_ssh_pass }}"
       src: "{{ configs_dir }}/{{ inventory_hostname }}/hostname.xml"
-  roles:
-    - hostname
+
     
