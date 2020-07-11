@@ -7,6 +7,14 @@
     switch_role: "distribution"
     ansible_connection: netconf
     ansible_network_os: ios
+  tasks:
+  - name: oki
+    netconf_config:
+      host: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_ssh_pass }}"
+      auth_pass: "{{ ansible_ssh_pass }}"
+      src: "{{ configs_dir }}/{{ inventory_hostname }}/hostname.xml"
   roles:
     - hostname
     
