@@ -8,6 +8,6 @@
     ansible_connection: netconf
     ansible_network_os: ios
 
-  role:
-  - hostname
+  roles:
+  - name: hostname
   
