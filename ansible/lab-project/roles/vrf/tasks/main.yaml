@@ -1,4 +1,4 @@
-- name: BUILD HOSTNAME XML DATA
+- name: BUILD VRF XML DATA
   template:
     src: vrf.j2
     dest: "{{ configs_dir }}/{{ inventory_hostname }}/vrf.xml"
