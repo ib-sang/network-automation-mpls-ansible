@@ -4,17 +4,17 @@
       <vrf>
        {% for vrf in vrfs %}
         <definition>
-        <name>{{ vrf["name"] }}</name>
-        <rd>{{ vrf["rd"] }}</rd>
-        <route-target>
-          <export>
-            <asn-ip>{{ vrf["target-export"] }}</asn-ip>
-          </export>
-          <import>
-            <asn-ip>{{ vrf["target-import"] }}</asn-ip>
-          </import>
-        </route-target>
-      </definition>
+          <name>{{ vrf["name"] }}</name>
+          <rd>{{ vrf["rd"] }}</rd>
+          <route-target>
+            <export>
+              <asn-ip>{{ vrf["target-export"] }}</asn-ip>
+            </export>
+            <import>
+              <asn-ip>{{ vrf["target-import"] }}</asn-ip>
+            </import>
+          </route-target>
+        </definition>
       {% endfor %}      
       </vrf> 
     {% endif %}    
