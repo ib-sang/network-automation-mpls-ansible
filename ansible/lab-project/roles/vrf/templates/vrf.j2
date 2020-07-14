@@ -5,13 +5,13 @@
        {% for definition in definitions %}
         <definition>
         <name>{{ definition["name"] }}</name>
-        <rd>{{ vrf["rd"] }}</rd>
+        <rd>{{ definition["rd"] }}</rd>
         <route-target>
           <export>
-            <asn-ip>{{ vrf["target-export"] }}</asn-ip>
+            <asn-ip>{{ definition["target-export"] }}</asn-ip>
           </export>
           <import>
-            <asn-ip>{{ vrf["target-import"] }}</asn-ip>
+            <asn-ip>{{ definition["target-import"] }}</asn-ip>
           </import>
         </route-target>
       </definition>
