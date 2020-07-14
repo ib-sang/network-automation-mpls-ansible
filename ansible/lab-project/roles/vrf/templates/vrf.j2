@@ -9,11 +9,11 @@
           <rd>{{ vrf["rd"] }}</rd>
           <route-target>
             <direction>export</direction>
-            <target>{{ vrf["export"]["target"] }}</target>
+            <target>{{ vrf["target-export"] }}</target>
           </route-target>  
           <route-target>
             <direction>import</direction>
-            <target>{{ vrf["import"]["target"] }}</target>
+            <target>{{ vrf["target-import"] }}</target>
           </route-target>        
         </vrf>
         {% endfor %}
