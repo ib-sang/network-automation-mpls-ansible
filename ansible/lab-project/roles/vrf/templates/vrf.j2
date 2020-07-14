@@ -2,7 +2,7 @@
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
     {% if vrf is defined%} 
       <vrf>
-       {% for definition in definitions %}
+       {% for vrf in vrfs %}
         <definition>
         <name>{{ definition["name"] }}</name>
         <rd>{{ definition["rd"] }}</rd>

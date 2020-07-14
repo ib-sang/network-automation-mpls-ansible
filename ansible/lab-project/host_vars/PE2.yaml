@@ -41,14 +41,12 @@ interfaces:
     ipv4_mask: 255.255.255.255
     enabled: no shutdown  
 
-vrf:
-  - definition:
-    name: A
+vrfs:
+  - name: A
     rd: 10.255.255.41:1
     target-export: 10.255.255.41:1
     target-import: 10.255.255.40:1
-  - definition:
-    name: B
+  - name: B
     rd: 10.255.255.50:2
     target-export: 10.255.255.51:2
     target-import: 10.255.255.50:2

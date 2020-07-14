@@ -36,14 +36,12 @@ interfaces:
     enabled: no shutdown  
 
 
-vrf:
-  - definitions:
-    name: A
+vrfs:
+  - nname: A
     rd: 10.255.255.40:1
     target-export: 10.255.255.40:1
     target-import: 10.255.255.41:1
-  - definitions:
-    name: B
+  - name: B
     rd: 10.255.255.50:2
     target-export: 10.255.255.50:2
     target-import: 10.255.255.51:2
