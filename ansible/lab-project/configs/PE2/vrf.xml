@@ -1,7 +1,7 @@
 #jinja2: lstrip_blocks: "true"
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <vrf  xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-vrf">
+    <vrf>
       <name>ONE</name>
       <rd>10.255.255.20:1</rd>
       <route-target>
@@ -13,7 +13,7 @@
         <target>10.255.255.20:1</target>
       </route-target>
     </vrf>
-    <vrf  xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-vrf">
+    <vrf>
       <name>TWO</name>
       <rd>10.255.255.31:2</rd>
       <route-target>
