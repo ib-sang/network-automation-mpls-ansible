@@ -7,14 +7,12 @@ all:
     ansible_python-interpreter: "usr/bin/env python"
   children:
     sjc:
-      ansible_network_os: ios
       hosts:
         PE1:
           ansible_host: 10.10.0.15
         PE2:
           ansible_host: 10.10.0.16
     sjc1:
-      ansible_network_os: ios
       hosts:
         PE3:
           ansible_host: 10.10.0.17
@@ -22,22 +20,18 @@ all:
           ansible_host: 10.10.0.18      
 
     pedgeL:
-      ansible_network_os: ios
       hosts:
         PE1:
           ansible_host: 10.10.0.15
     pedgeR:
-      ansible_network_os: ios
       hosts:
         PE2:
           ansible_host: 10.10.0.16
     pedgeB:
-      ansible_network_os: ios
       hosts:
         PE3:
           ansible_host: 10.10.0.17
     pedgeT:
-      ansible_network_os: ios
       hosts:
         PE4:
           ansible_host: 10.10.0.18
