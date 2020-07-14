@@ -1,0 +1,26 @@
+$base-font-siez:14px!default;
+$base-font-family:"vremenagrotesk",
+sans-serif!default;
+$base-color--primary:#e83e8c !default;
+$base-color-secondary:#dc3545 !default;
+$base-color-dark:#343a40!default;
+$base-color-muted:#868e96 !default;
+@function strip-unit($number) {
+    @if(type-of($number)=='number' and not unitless($number)) {
+        @return $number/($number*0+1);
+    }
+    @return $number;
+}
+
+@function rem($size, $base-font-siez) {
+    @return 1rem*$size/strip-unit($base-font-siez);
+}
+
+@function em($size, $base-font-siez) {
+    @return 1em*$size/strip-unit($base-font-siez);
+}
+
+$size:8;
+@function space($i) {
+    @return $size*$i;
+}

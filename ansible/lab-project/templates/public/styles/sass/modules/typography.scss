@@ -1,0 +1,21 @@
+// variables
+// =================
+$r-b:'Rubik-Black',
+sans-serif;
+$s-p:'SourceSansPro-Black',
+sans-serif;
+@include font-face('Rubik-Black', 'fonts/Rubik-Light', 300);
+@include font-face('Rubik-Black', 'fonts/Rubik-Regular', 400);
+@include font-face('Rubik-Black', 'fonts/Rubik-Medium', 500);
+@include font-face('Rubik-Black', 'fonts/Rubik-Semibold', 600);
+@include font-face('SourceSansPro', 'fonts/SourceSansPro-Light', 300);
+@include font-face('SourceSansPro', 'fonts/SourceSansPro-Regular', 400);
+@include font-face('SourceSansPro', 'fonts/SourceSansPro-Medium', 500);
+@include font-face('SourceSansPro', 'fonts/SourceSansPro-Semibold', 600);
+%big__title {
+    font-family: $r-b;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 2;
+    color: #423d3d;
+}

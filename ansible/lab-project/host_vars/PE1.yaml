@@ -1,11 +1,55 @@
 ---
 interfaces:
-  - name: GigabitEthernet0/0
-    vrf: A
-    ipv4: 10.255.10.1
+  - name: GigabitEthernet1
+    description: 
+    ipv4: 10.10.0.15
+    ipv4_mask: 255.255.255.0
+    enabled: no shutdown
+  - name: GigabitEthernet2
+    description: connected to P1
+    ipv4: 10.255.254.10
     ipv4_mask: 255.255.255.252
-  - name: GigabitEthernet1/0
-    vrf: B
+    mpls: mpls ip
+    enabled: no shutdown
+  - name: GigabitEthernet3
+    description: connected to P2
+    ipv4: 10.255.254.18
+    ipv4_mask: 255.255.255.252
+    mpls: mpls ip
+    enabled: no shutdown
+  - name: GigabitEthernet4
+    description: connected to customer ONE
+    vrf: ONE
     ipv4: 10.255.20.1
     ipv4_mask: 255.255.255.0
+    enabled: no shutdown
+  - name: GigabitEthernet5
+    description: connected to customer TWO
+    vrf: TWO
+    ipv4: 10.255.20.1
+    ipv4_mask: 255.255.255.252
+    enabled: no shutdown     
+  - name: Loopback0
+    description: Loopback0
+    ipv4: 10.255.255.11
+    ipv4_mask: 255.255.255.255
+    enabled: no shutdown  
 
+
+vrfs:
+  - vrf:
+    name: ONE
+    rd: 10.255.255.20:1
+    route-target:
+    - direction: export
+      target: 10.255.255.21:1
+    - direction: import
+      target: 10.255.255.20:1
+  - vrf:
+    name: TWO
+    rd: 10.255.255.30:2
+    route-target:
+    - direction: export
+      target: 10.255.255.31:2
+    - direction: import
+      target: 10.255.255.30:2

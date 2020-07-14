@@ -3,13 +3,20 @@
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
     {% if vrfs is defined%} 
       {% for vrf in vrfs %}
-        <ios_vrf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-vrf">
-          <vrf-name>{{ vrf["name"] }}</vrf-name>
+        <vrf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-vrf">
+          <name>{{ vrf["name"] }}</name>
           <create/>
-          <vrf-rd>{{ ["rd"] }}</vrf-rd>
-          <vrf-target>{{ ["route_both"] }}</vrf-target>
-          <description>{{ ["description"] }}</description>        
-        </ios_vrf>
+          <description>{{ vrf["description"] }}</description> 
+          <rd>{{ vrf["rd"] }}</rd>
+          <route-target>
+            <direction>export</direction>
+            <target>{{ vrf["route-export"] }}</target>
+          </route-target>  
+          <route-target>
+            <direction>import</direction>
+            <target>{{ vrf["route-import"] }}</target>
+          </route-target>        
+        </vrf>
         {% endfor %}
     {% endif %}    
   </native>

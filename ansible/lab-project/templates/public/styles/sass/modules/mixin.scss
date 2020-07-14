@@ -1,0 +1,47 @@
+@mixin transform($transform) {
+    -moz-transform: $transform;
+    -o-transform: $transform;
+    -ms-transform: $transform;
+    -webkit-transform: $transform;
+    transform: $transform;
+}
+
+@mixin transition($transition) {
+    -moz-transition: $transform;
+    -o-transition: $transform;
+    -ms-transition: $transform;
+    transition: $transform;
+}
+
+@mixin animation($animation, $duration) {
+    -moz-animation: $animation $duration;
+    -o-animation: $animation $duration;
+    -ms-animation: $animation $duration;
+    animation: $animation $duration;
+}
+
+@mixin font-face($font, $path, $size) {
+    @font-face {
+        font-family: $font;
+        src: url($path+ '.woff2');
+        src: url($path+ '.woff');
+        src: url($path+ '.svg');
+        src: url($path+ '.eot');
+        src: url($path+ '.tff');
+        font-size: $size;
+    }
+}
+
+@mixin up($size) {
+    $size: strip-unit($size);
+    @media (min-width: $size + 1px) {
+        @content;
+    }
+}
+
+@mixin dow($size) {
+    $size: strip-unit($size);
+    @media (max-width: $size + 1px) {
+        @content;
+    }
+}

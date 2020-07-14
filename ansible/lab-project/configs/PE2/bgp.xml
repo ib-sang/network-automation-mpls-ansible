@@ -1,0 +1,69 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <router>
+        <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
+            <id>64512</id>
+            <bgp>
+                <log-neighbor-changes>true</log-neighbor-changes>
+            </bgp>
+            <neighbor>
+                <id>10.255.255.12</id>
+                <remote-as>64512</remote-as>
+                <update-source>
+                    <Loopback>0</Loopback>
+                </update-source>
+            </neighbor>
+            <address-family>
+                <with-vrf>
+                    <ipv4>
+                        <af-name>unicast</af-name>
+                        <vrf>
+                            <name>ONE</name>
+                            <ipv4-unicast>
+                                <redistribute>
+                                    <ospf>
+                                        <id>2</id>
+                                    </ospf>
+                                </redistribute>
+                            </ipv4-unicast>
+                        </vrf>
+                        <vrf>
+                            <name>TWO</name>
+                            <ipv4-unicast>
+                                <redistribute>
+                                    <eigrp>
+                                        <as-no>200</as-no>
+                                    </eigrp>
+                                </redistribute>
+                            </ipv4-unicast>
+                        </vrf>
+                    </ipv4>
+                </with-vrf>
+                <no-vrf>
+                    <ipv4>
+                        <af-name>unicast</af-name>
+                        <ipv4-unicast>
+                            <neighbor>
+                                <id>10.255.255.12</id>
+                                <activate />
+                            </neighbor>
+                        </ipv4-unicast>
+                    </ipv4>
+                    <vpnv4>
+                        <af-name>unicast</af-name>
+                        <vpnv4-unicast>
+                            <neighbor>
+                                <id>10.255.255.12</id>
+                                <activate />
+                                <send-community>
+                                    <send-community-where>extended</send-community-where>
+                                </send-community>
+                            </neighbor>
+                        </vpnv4-unicast>
+                    </vpnv4>
+                </no-vrf>
+            </address-family>
+        </bgp>    
+    </router>
+  </native>
+</config>

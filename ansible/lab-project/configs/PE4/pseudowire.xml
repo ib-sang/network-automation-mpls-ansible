@@ -1,0 +1,8 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <pseudowire-class>
+        <name>POINT-to-POINT</name>
+        <encapsulation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-l2vpn">mpls</encapsulation>
+    </pseudowire-class>
+  </native>
+</config>
