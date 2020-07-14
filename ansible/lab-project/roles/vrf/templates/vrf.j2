@@ -1,6 +1,6 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    {% if vrf is defined%} 
+    {% if vrfs is defined%} 
       <vrf>
        {% for vrf in vrfs %}
         <definition>
