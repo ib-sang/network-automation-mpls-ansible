@@ -9,5 +9,4 @@
     ansible_network_os: ios
 
   roles:
-  - name: hostname
-  - name: vrf  
+  - hostname

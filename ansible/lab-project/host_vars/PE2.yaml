@@ -1,13 +1,13 @@
 ---
 interfaces:
-  - name: GigabitEthernet1
-    description: 
-    ipv4: 10.10.0.15
-    ipv4_mask: 255.255.255.0
-    enabled: no shutdown
   - name: GigabitEthernet2
-    description: connected to P1
-    ipv4: 10.255.254.10
+    description: connected to P3
+    ipv4: 10.255.254.30
+    ipv4_mask: 255.255.255.252
+    enabled: no shutdown
+  - name: GigabitEthernet3
+    description: connected to P2
+    ipv4: 10.255.254.22
     ipv4_mask: 255.255.255.252
     mpls: mpls ip
     enabled: no shutdown
@@ -19,19 +19,25 @@ interfaces:
     enabled: no shutdown
   - name: GigabitEthernet4
     description: connected to customer ONE
-    vrf: ONE
-    ipv4: 10.255.20.1
-    ipv4_mask: 255.255.255.0
+    vrf: 
+    ipv4: 
+    ipv4_mask: 
     enabled: no shutdown
   - name: GigabitEthernet5
-    description: connected to customer TWO
-    vrf: TWO
-    ipv4: 10.255.20.1
+    description: connected to customer ONE
+    vrf: ONE
+    ipv4: 10.255.11.1
     ipv4_mask: 255.255.255.252
     enabled: no shutdown     
+  - name: GigabitEthernet6
+    description: connected to customer TWO
+    vrf: TWO
+    ipv4: 10.255.21.1
+    ipv4_mask: 255.255.255.252
+    enabled: no shutdown
   - name: Loopback0
     description: Loopback0
-    ipv4: 10.255.255.11
+    ipv4: 10.255.255.12
     ipv4_mask: 255.255.255.255
     enabled: no shutdown  
 

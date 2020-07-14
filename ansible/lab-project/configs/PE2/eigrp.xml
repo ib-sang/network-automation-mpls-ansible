@@ -11,7 +11,7 @@
                         <autonomous-system>200</autonomous-system>
                      </set-as-in-submode>
                      <network>
-                        <number>10.255.20.0</number>
+                        <number>10.255.21.0</number>
                         <wild-card>0.0.0.3</wild-card>
                      </network>
                      <redistribute>
