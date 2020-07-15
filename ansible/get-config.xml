@@ -43,56 +43,34 @@
           <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
            
  <interface> 
-        <GigabitEthernet>
-        <name>4</name>
-        <ip>
-            <vrf>
-                <forwarding>
-                    <word>A</word>
-                </forwarding>
-            </vrf>
-            <address>
+    <GigabitEthernet>
+        <name>6</name>
+       
+      <ip>
+      <vrf>
+              <forwarding><word>ONE</word></forwarding>
+      </vrf>
+              <address>
                 <primary>
                     <address>10.255.11.1</address>
                     <mask>255.255.255.252</mask>
                 </primary>
             </address>
-        </ip>
+      </ip>
+
         <mop>
-            <enabled>false</enabled>
-            <sysid>false</sysid>
-        </mop>
-            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-            <auto>true</auto>
-        </negotiation>
+                  <enabled>false</enabled>
+                  <sysid>false</sysid>
+               </mop>
+               <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+                  <auto>true</auto>
+               </negotiation>
     </GigabitEthernet>
-     <GigabitEthernet>
-        <name>5</name>
-        <ip>
-            <vrf>
-                <forwarding>
-                    <word>B</word>
-                </forwarding>
-            </vrf>
-            <address>
-                <primary>
-                    <address>10.255.21.1</address>
-                    <mask>255.255.255.25</mask>
-                </primary>
-            </address>
-        </ip>
-        <mop>
-            <enabled>false</enabled>
-            <sysid>false</sysid>
-        </mop>
-            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-            <auto>true</auto>
-        </negotiation>
-    </GigabitEthernet>
-    </interface>
-          </native>
-        </config>
-       </edit-config>
+
+  </interface>
+    </native>
+    </config>
+  </edit-config>
 </rpc>]]>]]>
 
 
@@ -104,32 +82,21 @@
          </target>
          <config>
           <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+          <ip>
             <vrf>
-                <definition>
-                  <name>A</name>
-                  <rd>10.255.255.40:1</rd>
-                  <route-target>
-                    <export>
-                      <asn-ip>10.255.255.40:1</asn-ip>
-                    </export>
-                    <import>
-                      <asn-ip>10.255.255.41:1</asn-ip>
-                    </import>
-                </route-target>
-              </definition>
-               <definition>
-               <name>B</name>
-               <rd>10.255.255.50:2</rd>
+               <name>ONE</name>
+               <rd>10.255.255.21:1</rd>
                <route-target>
-                  <export>
-                     <asn-ip>10.255.255.50:2</asn-ip>
-                  </export>
-                  <import>
-                     <asn-ip>10.255.255.51:2</asn-ip>
-                  </import>
+                  <direction>export</direction>
+                  <target>10.255.255.20:1</target>
                </route-target>
-            </definition>
+               <route-target>
+                  <direction>import</direction>
+                  <target>10.255.255.21:1</target>
+               </route-target>
             </vrf>
+          </ip>
+            
           </native>
         </config>
        </edit-config>

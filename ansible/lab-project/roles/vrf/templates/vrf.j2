@@ -1,23 +1,23 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <ip>
     {% if vrfs is defined%} 
       <vrf>
        {% for vrf in vrfs %}
-        <definition>
           <name>{{ vrf["name"] }}</name>
           <rd>{{ vrf["rd"] }}</rd>
           <route-target>
-            <export>
-              <asn-ip>{{ vrf["target-export"] }}</asn-ip>
-            </export>
-            <import>
+            <direction>export</direction>
+            <target>{{ vrf["target-export"] }}</target>
               <asn-ip>{{ vrf["target-import"] }}</asn-ip>
-            </import>
           </route-target>
-        </definition>
+          <route-target>
+            <direction>impport</direction>
+            <target>{{ vrf["target-import"] }}</target>
+          </route-target>
       {% endfor %}      
       </vrf> 
-    {% endif %}    
+    {% endif %}   
+    <ip> 
   </native>
 </config>
-

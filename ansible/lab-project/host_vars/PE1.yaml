@@ -37,25 +37,24 @@ interfaces:
 
 
 vrfs:
-  - name: A
-    rd: 10.255.255.40:1
-    target-export: 10.255.255.40:1
-    target-import: 10.255.255.41:1
-  - name: B
-    rd: 10.255.255.50:2
-    target-export: 10.255.255.50:2
-    target-import: 10.255.255.51:2
+  - name: ONE
+    rd: 10.255.255.20:1
+    target-export: 10.255.255.21:1
+    target-import: 10.255.255.20:1
+  - name: TWO
+    rd: 10.255.255.30:2
+    target-export: 10.255.255.31:2
+    target-import: 10.255.255.30:2
 
 
 
 interface_fors:
   - name: 4
-    forwarding: A
+    forwarding: ONE
     ipadd: 10.255.10.1
     mask: 255.255.255.252
     enabled: true
   - name: 5
-    forwarding: B
+    forwarding: TWO
     ipadd: 10.255.20.1
     mask: 255.255.255.252
-

@@ -1,31 +1,31 @@
 #jinja2: lstrip_blocks: "true"
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <vrf operation="replace">
-      <definition>
-        <name>A</name>
-        <rd>10.255.255.40:1</rd>
-          <route-target>
-          <export>
-            <asn-ip>10.255.255.40:1</asn-ip>
-          </export>
-          <import>
-            <asn-ip>10.255.255.41:1</asn-ip>
-          </import>
-        </route-target>
-      </definition>
-      <definition>
-          <name>B</name>
-          <rd>10.255.255.50:2</rd>
-        <route-target>
-          <export>
-            <asn-ip>10.255.255.50:2</asn-ip>
-          </export>
-          <import>
-            <asn-ip>10.255.255.51:2</asn-ip>
-          </import>
-        </route-target>
-      </definition>
-    </vrf>
+    <ip>
+          <vrf>
+               <name>ONE</name>
+               <rd>10.255.255.20:1</rd>
+               <route-target>
+                  <direction>export</direction>
+                  <target>10.255.255.21:1</target>
+               </route-target>
+               <route-target>
+                  <direction>import</direction>
+                  <target>10.255.255.20:1</target>
+               </route-target>
+          </vrf>
+          <vrf>
+               <name>TWO</name>
+               <rd>10.255.255.30:2</rd>
+               <route-target>
+                  <direction>export</direction>
+                  <target>10.255.255.31:2</target>
+               </route-target>
+               <route-target>
+                  <direction>import</direction>
+                  <target>10.255.255.30:2</target>
+               </route-target>
+          </vrf>
+    </ip>
   </native>
 </config>

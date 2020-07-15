@@ -6,7 +6,7 @@
         <ip>
             <vrf>
                 <forwarding>
-                    <word>A</word>
+                    <word>ONE</word>
                 </forwarding>
             </vrf>
             <address>
@@ -29,7 +29,7 @@
         <ip>
             <vrf>
                 <forwarding>
-                    <word>B</word>
+                    <word>TWO</word>
                 </forwarding>
             </vrf>
             <address>
@@ -51,6 +51,3 @@
     
   </native>
 </config>
-
-
-
