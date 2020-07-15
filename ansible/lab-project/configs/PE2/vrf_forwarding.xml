@@ -1,7 +1,6 @@
 #jinja2: lstrip_blocks: "true"
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <interfaces> 
         <GigabitEthernet>
         <name>4</name>
         <ip>
@@ -48,7 +47,6 @@
         <auto>true</auto>
         </negotiation>
     </GigabitEthernet>
-    </interfaces>
     
   </native>
 </config>
