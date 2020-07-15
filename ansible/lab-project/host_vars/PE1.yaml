@@ -37,7 +37,7 @@ interfaces:
 
 
 vrfs:
-  - nname: A
+  - name: A
     rd: 10.255.255.40:1
     target-export: 10.255.255.40:1
     target-import: 10.255.255.41:1
