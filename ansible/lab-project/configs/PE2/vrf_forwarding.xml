@@ -1,6 +1,6 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <interface> 
+    <interface xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-interface"> 
         <GigabitEthernet>
         <name>4</name>
         <ip>
@@ -20,8 +20,8 @@
             <enabled>true</enabled>
             <sysid>false</sysid>
         </mop>
-            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-            <auto>true</auto>
+        <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+        <auto>true</auto>
         </negotiation>
     </GigabitEthernet>
      <GigabitEthernet>
@@ -43,8 +43,8 @@
             <enabled>true</enabled>
             <sysid>false</sysid>
         </mop>
-            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-            <auto>true</auto>
+        <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+        <auto>true</auto>
         </negotiation>
     </GigabitEthernet>
     </interface>
