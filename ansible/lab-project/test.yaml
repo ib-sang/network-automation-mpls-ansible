@@ -11,3 +11,4 @@
   roles:
   - vrf
   - vrf_forwarding
+  - ospf

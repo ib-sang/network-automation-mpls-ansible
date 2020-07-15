@@ -58,3 +58,13 @@ interface_fors:
     forwarding: TWO
     ipadd: 10.255.20.1
     mask: 255.255.255.252
+
+
+routers:
+  - id: 2
+    vrf: ONE
+    bgp-as: 64512
+    network: 10.255.11.0
+    mask: 0.0.0.3
+    area: 2    
+
