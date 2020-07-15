@@ -41,6 +41,69 @@
          </target>
          <config>
           <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+           
+ <interface> 
+        <GigabitEthernet>
+        <name>4</name>
+        <ip>
+            <vrf>
+                <forwarding>
+                    <word>A</word>
+                </forwarding>
+            </vrf>
+            <address>
+                <primary>
+                    <address>10.255.11.1</address>
+                    <mask>255.255.255.252</mask>
+                </primary>
+            </address>
+        </ip>
+        <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+        </mop>
+            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+        </negotiation>
+    </GigabitEthernet>
+     <GigabitEthernet>
+        <name>5</name>
+        <ip>
+            <vrf>
+                <forwarding>
+                    <word>B</word>
+                </forwarding>
+            </vrf>
+            <address>
+                <primary>
+                    <address>10.255.21.1</address>
+                    <mask>255.255.255.25</mask>
+                </primary>
+            </address>
+        </ip>
+        <mop>
+            <enabled>false</enabled>
+            <sysid>false</sysid>
+        </mop>
+            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+            <auto>true</auto>
+        </negotiation>
+    </GigabitEthernet>
+    </interface>
+          </native>
+        </config>
+       </edit-config>
+</rpc>]]>]]>
+
+
+<rpc message-id="101"
+          xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+       <edit-config>
+         <target>
+           <running/>
+         </target>
+         <config>
+          <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
             <vrf>
                 <definition>
                   <name>A</name>
