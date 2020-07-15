@@ -10,7 +10,7 @@
             </vrf>
             <address>
                 <primary>
-                    <address>10.255.10.1</address>
+                    <address>10.255.11.1</address>
                     <mask>255.255.255.252</mask>
                 </primary>
             </address>
@@ -33,7 +33,7 @@
             </vrf>
             <address>
                 <primary>
-                    <address>10.255.20.1</address>
+                    <address>10.255.21.1</address>
                     <mask>255.255.255.25</mask>
                 </primary>
             </address>
@@ -48,6 +48,3 @@
     </GigabitEthernet>
   </native>
 </config>
-
-
-
