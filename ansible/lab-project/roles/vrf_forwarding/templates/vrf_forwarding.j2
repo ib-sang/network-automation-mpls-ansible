@@ -1,6 +1,6 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <interface>
+    <interface xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-interface">
         {% for interface in interface_fors %}
         <GigabitEthernet>
             <name>{{ interface["name"] }}</name>
