@@ -18,7 +18,7 @@
             </address>
         </ip>
         <mop>
-            <enabled>true</enabled>
+            <enabled>false</enabled>
             <sysid>false</sysid>
         </mop>
         <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
