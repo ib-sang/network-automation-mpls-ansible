@@ -1,31 +1,34 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-  {% for interface in interface_fors %}
-    <GigabitEthernet>
-        <name>{{ interface["name"] }}</name>
-        <ip>
-            <vrf>
-                <forwarding>
-                    <word>{{ interface["forwarding"] }}</word>
-                </forwarding>
-            </vrf>
-            <address>
-                <primary>
-                    <address>{{ interface["ipadd"] }}</address>
-                    <mask>{{ interface["mask"] }}</mask>
-                </primary>
-            </address>
-        </ip>
-        <mop>
-            <enabled>{{ interface["enabled"] }}</enabled>
-            <sysid>false</sysid>
-        </mop>
-            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-            <auto>true</auto>
-        </negotiation>
-    </GigabitEthernet>
+    <interface>
+        {% for interface in interface_fors %}
+        <GigabitEthernet>
+            <name>{{ interface["name"] }}</name>
+            <ip>
+                <vrf>
+                    <forwarding>
+                        <word>{{ interface["forwarding"] }}</word>
+                    </forwarding>
+                </vrf>
+                <address>
+                    <primary>
+                        <address>{{ interface["ipadd"] }}</address>
+                        <mask>{{ interface["mask"] }}</mask>
+                    </primary>
+                </address>
+            </ip>
+            <mop>
+                <enabled>{{ interface["enabled"] }}</enabled>
+                <sysid>false</sysid>
+            </mop>
+                <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+                <auto>true</auto>
+            </negotiation>
+        </GigabitEthernet>
 
-    {% endfor %}
+        {% endfor %}
+    </interface>
+  
   </native>
 </config>
 

@@ -1,6 +1,7 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <GigabitEthernet>
+    <interface>
+        <GigabitEthernet>
         <name>4</name>
         <ip>
             <vrf>
@@ -23,7 +24,7 @@
             <auto>true</auto>
         </negotiation>
     </GigabitEthernet>
-     <GigabitEthernet>
+    <GigabitEthernet>
         <name>5</name>
         <ip>
             <vrf>
@@ -46,6 +47,8 @@
             <auto>true</auto>
         </negotiation>
     </GigabitEthernet>
+    </interface>
+    
   </native>
 </config>
 
