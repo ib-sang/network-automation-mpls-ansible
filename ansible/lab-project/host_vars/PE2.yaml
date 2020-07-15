@@ -50,3 +50,17 @@ vrfs:
     rd: 10.255.255.50:2
     target-export: 10.255.255.51:2
     target-import: 10.255.255.50:2
+
+
+
+interface_fors:
+  - name: 5
+    forwarding: A
+    ipadd: 10.255.11.1
+    mask: 255.255.255.252
+    enabled: true
+  - name: 6
+    forwarding: B
+    ipadd: 10.255.21.1
+    mask: 255.255.255.252
+    enabled: true
