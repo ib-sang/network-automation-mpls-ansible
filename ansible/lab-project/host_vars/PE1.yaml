@@ -58,5 +58,4 @@ interface_fors:
     forwarding: B
     ipadd: 10.255.20.1
     mask: 255.255.255.252
-    enabled: true
 
