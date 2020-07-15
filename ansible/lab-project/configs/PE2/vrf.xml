@@ -1,31 +1,31 @@
-  <config>
-          <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-          <ip>
-            <vrf>
-               <name>ONE</name>
-               <rd>10.255.255.21:1</rd>
-               <route-target>
-                  <direction>export</direction>
-                  <target>10.255.255.20:1</target>
-               </route-target>
-               <route-target>
-                  <direction>import</direction>
-                  <target>10.255.255.21:1</target>
-               </route-target>
-            </vrf>
-            <vrf>
-              <name>TWO</name>
-              <rd>10.255.255.31:2</rd>
-              <route-target>
-                <direction>export</direction>
-                <target>10.255.255.30:2</target>
-                </route-target>
-                <route-target>
-                  <direction>import</direction>
-                  <target>10.255.255.31:2</target>
-                </route-target>
-            </vrf>
-          </ip>
-            
-          </native>
-        </config>
+#jinja2: lstrip_blocks: "true"
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <ip>
+      <vrf>
+        <name>ONE</name>
+          <rd>10.255.255.21:1</rd>
+          <route-target>
+            <direction>export</direction>
+            <target>10.255.255.20:1</target>
+            </route-target>
+            <route-target>
+              <direction>import</direction>
+              <target>10.255.255.21:1</target>
+            </route-target>
+      </vrf>
+      <vrf>
+        <name>TWO</name>
+        <rd>10.255.255.31:2</rd>
+        <route-target>
+          <direction>export</direction>
+          <target>10.255.255.30:2</target>
+          </route-target>
+          <route-target>
+            <direction>import</direction>
+            <target>10.255.255.31:2</target>
+          </route-target>
+      </vrf>
+    </ip>  
+  </native> 
+</config>
