@@ -95,4 +95,4 @@ customers:
     ospf-id: 2
   - name: TWO
     redistribute: eigrp
-    ospf-id: 200
+    eigrp-id: 200
