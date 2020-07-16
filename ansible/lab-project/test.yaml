@@ -9,5 +9,5 @@
     ansible_network_os: ios
 
   roles:
-  - vrf
   - mp_bgp
+  - routing_pe_ce
