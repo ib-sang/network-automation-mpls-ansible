@@ -1,4 +1,4 @@
-- name: BUILD EIGRP XML DATA
+- name: BUILD ROUTING PE-CE XML DATA
   template:
     src: routing_pe_ce.j2
     dest: "{{ configs_dir }}/{{ inventory_hostname }}/routing_pe_ce.xml"

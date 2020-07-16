@@ -1,4 +1,4 @@
-- name: BUILD HOSTNAME XML DATA
+- name: BUILD MP-BGP XML DATA
   template:
     src: mp_bgp.j2
     dest: "{{ configs_dir }}/{{ inventory_hostname }}/mp_bgp.xml"
