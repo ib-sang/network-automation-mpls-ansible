@@ -114,3 +114,36 @@
        </edit-config>
 </rpc>]]>]]>
 
+
+
+<rpc message-id="101"
+          xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+       <edit-config>
+         <target>
+           <running/>
+         </target>
+ <config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <router>  
+      <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+        <id>2</id>
+        <vrf>ONE</vrf>
+        <redistribute>
+          <bgp>
+            <as-number>64512</as-number>
+            <redist-options>
+              <subnets />
+            </redist-options>
+          </bgp>
+        </redistribute>
+        <network>
+          <ip>10.255.11.0</ip>
+          <mask>0.0.0.3</mask>
+          <area>10</area>
+        </network>
+      </ospf>
+    </router>
+  </native>
+</config>
+       </edit-config>
+</rpc>]]>]]>

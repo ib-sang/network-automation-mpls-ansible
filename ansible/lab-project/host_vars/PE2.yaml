@@ -63,7 +63,7 @@ interface_fors:
     mask: 255.255.255.252
 
 
-routers:
+ospfs:
   - id: 2
     vrf: ONE
     bgp-as: 64512
