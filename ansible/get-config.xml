@@ -147,3 +147,10 @@
 </config>
        </edit-config>
 </rpc>]]>]]>
+
+
+
+  {% elseif customer["redistribute"]=="rip" %}
+                                    </rip>
+                                    {% elseif customer["redistribute"]=="connected" %}
+                                    </connected>

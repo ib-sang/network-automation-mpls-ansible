@@ -88,3 +88,11 @@ neighbors_bgp:
   - id: 10.255.255.14
     as: 64512
     loopback: 0
+
+customers:
+  - name: ONE
+    redistribute: ospf
+    ospf-id: 2
+  - name: TWO
+    redistribute: eigrp
+    ospf-id: 200
