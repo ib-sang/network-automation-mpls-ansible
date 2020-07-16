@@ -21,7 +21,7 @@
                                     <ospf>
                                         <id>{{customer["ospf-id"]}}</id>
                                     </ospf>
-                                    {% elseif customer["redistribute"]=="eigrp" %}
+                                    {% elif customer["redistribute"]=="eigrp" %}
                                     <eigrp>
                                         <as-no>{{customer["eigrp-id"]}}</as-no>
                                     </eigrp>
