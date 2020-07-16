@@ -10,4 +10,4 @@
 
   roles:
   - vrf
-  - eigrp
+  - mp_bgp

@@ -7,7 +7,21 @@
                 <log-neighbor-changes>true</log-neighbor-changes>
             </bgp>
             <neighbor>
-                <id>10.255.255.12</id>
+                <id>10.255.255.11</id>
+                <remote-as>64512</remote-as>
+                <update-source>
+                    <Loopback>0</Loopback>
+                </update-source>
+            </neighbor>
+            <neighbor>
+                <id>10.255.255.13</id>
+                <remote-as>64512</remote-as>
+                <update-source>
+                    <Loopback>0</Loopback>
+                </update-source>
+            </neighbor>
+            <neighbor>
+                <id>10.255.255.14</id>
                 <remote-as>64512</remote-as>
                 <update-source>
                     <Loopback>0</Loopback>
@@ -19,7 +33,15 @@
                         <af-name>unicast</af-name>
                         <ipv4-unicast>
                             <neighbor>
-                                <id>10.255.255.12</id>
+                                <id>10.255.255.11</id>
+                                <activate />
+                            </neighbor>
+                            <neighbor>
+                                <id>10.255.255.13</id>
+                                <activate />
+                            </neighbor>
+                            <neighbor>
+                                <id>10.255.255.14</id>
                                 <activate />
                             </neighbor>
                         </ipv4-unicast>
@@ -28,7 +50,21 @@
                         <af-name>unicast</af-name>
                         <vpnv4-unicast>
                             <neighbor>
-                                <id>10.255.255.12</id>
+                                <id>10.255.255.11</id>
+                                <activate />
+                                <send-community>
+                                    <send-community-where>extended</send-community-where>
+                                </send-community>
+                            </neighbor>
+                            <neighbor>
+                                <id>10.255.255.13</id>
+                                <activate />
+                                <send-community>
+                                    <send-community-where>extended</send-community-where>
+                                </send-community>
+                            </neighbor>
+                            <neighbor>
+                                <id>10.255.255.14</id>
                                 <activate />
                                 <send-community>
                                     <send-community-where>extended</send-community-where>

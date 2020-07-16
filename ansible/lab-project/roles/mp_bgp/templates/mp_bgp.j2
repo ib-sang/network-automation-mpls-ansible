@@ -1,0 +1,56 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <router>
+        <bgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-bgp">
+            <id>64512</id>
+            <bgp>
+                <log-neighbor-changes>true</log-neighbor-changes>
+            </bgp>
+            {% if neighbors_bgp is defined %}
+                {% for neighbor in neighbors_bgp %}
+                <neighbor>
+                    <id>{{ neighbor["id"] }}</id>
+                    <remote-as>{{ neighbor["as"] }}</remote-as>
+                    <update-source>
+                        <Loopback>{{ neighbor["loopback"] }}</Loopback>
+                    </update-source>
+                </neighbor>
+                {% endfor %}
+            {% endif %}
+            <address-family>
+                <no-vrf>
+                    <ipv4>
+                        <af-name>unicast</af-name>
+                        <ipv4-unicast>
+                        {% if neighbors_bgp is defined%}
+                            {% for neighbor in neighbors_bgp %}
+                            <neighbor>
+                                <id>{{ neighbor["id"] }}</id>
+                                <activate />
+                            </neighbor>
+                            {% endfor %}
+                        {% endif %}
+                        </ipv4-unicast>
+                    </ipv4>
+                    <vpnv4>
+                        <af-name>unicast</af-name>
+                        <vpnv4-unicast>
+                        {% if neighbors_bgp is defined %}
+                            {% for neighbor in neighbors_bgp %}
+                                <neighbor>
+                                    <id>{{ neighbor["id"] }}</id>
+                                    <activate />
+                                    <send-community>
+                                        <send-community-where>extended</send-community-where>
+                                    </send-community>
+                                </neighbor>
+                            {% endfor %}
+                        {% endif %}
+                        </vpnv4-unicast>
+                    </vpnv4>
+                </no-vrf>
+            </address-family>
+        </bgp>    
+    </router>
+  </native>
+</config>

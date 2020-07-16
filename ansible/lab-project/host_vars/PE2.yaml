@@ -79,3 +79,14 @@ eigrps:
     bgp-as: 64512
     network: 10.255.21.0
     mask: 0.0.0.3
+
+neighbors_bgp:
+  - id: 10.255.255.11
+    as: 64512
+    loopback: 0
+  - id: 10.255.255.13
+    as: 64512
+    loopback: 0
+  - id: 10.255.255.14
+    as: 64512
+    loopback: 0

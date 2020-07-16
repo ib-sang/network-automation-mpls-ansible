@@ -34,3 +34,16 @@ interfaces:
     ipv4: 10.255.255.11
     ipv4_mask: 255.255.255.255
     enabled: no shutdown  
+
+
+
+neighbors_bgp:
+  - id: 10.255.255.11
+    as: 64512
+    loopback: 0
+  - id: 10.255.255.13
+    as: 64512
+    loopback: 0
+  - id: 10.255.255.12
+    as: 64512
+    loopback: 0    
