@@ -11,7 +11,7 @@
                 <with-vrf>
                     <ipv4>
                         <af-name>unicast</af-name>
-                        {% if customer is defined %}
+                        {% if customers is defined %}
                         {% for customer in customers%}
                         <vrf>
                             <name>{{ customer["name"] }}</name>
