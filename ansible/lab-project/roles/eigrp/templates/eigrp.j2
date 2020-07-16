@@ -1,24 +1,24 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
     <router>  
-    {% if eirgps is defined %}
-      {% for eirgp in eirgps %}
-        <eirgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-eirgp">
-          <id> {{ eirgp["id"] }} </id>
+    {% if eigrps is defined %}
+      {% for eigrp in eigrps %}
+        <eigrp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-eigrp">
+          <id> {{ eigrp["id"] }} </id>
           <address-family>
             <type>ipv4</type>
               <af-ip-vrf-list>
-                  <vrf>{{ eirgp["vrf"] }}</vrf>
+                  <vrf>{{ eigrp["vrf"] }}</vrf>
                     <set-as-in-submode>
                       <autonomous-system>200</autonomous-system>
                     </set-as-in-submode>
                     <network>
-                      <number>{{ eirgp["network"] }}</number>
+                      <number>{{ eigrp["network"] }}</number>
                         <wild-card>{{ ["mask"] }}</wild-card>
                     </network>
                      <redistribute>
                         <bgp>
-                           <rdr-as>{{ eirgp["bgp-as"] }}</rdr-as>
+                           <rdr-as>{{ eigrp["bgp-as"] }}</rdr-as>
                            <metric>
                               <bandwith>1500</bandwith>
                               <delay>100</delay>
@@ -30,7 +30,7 @@
                     </redistribute>
                 </af-ip-vrf-list>
             </address-family
-        </eirgp>
+        </eigrp>
       {% endfor %}
     {% endif %}
     </router>
