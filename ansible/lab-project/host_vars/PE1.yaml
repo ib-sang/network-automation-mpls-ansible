@@ -68,3 +68,12 @@ ospfs:
     mask: 0.0.0.3
     area: 2    
 
+
+eigrps:
+  - id: 200
+    vrf: TWO
+    eigrp-as: 200
+    bgp-as: 64512
+    network: 10.255.20.0
+    mask: 0.0.0.3
+

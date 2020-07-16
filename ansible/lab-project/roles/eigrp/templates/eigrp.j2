@@ -1,58 +1,24 @@
-#jinja2: lstrip_blocks: "true"
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <router>
-      <eigrp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-eigrp">
-        <id>{{ eigrp["name"] }}</id>
-        <address-family>
-          <type>ipv4</type>
-          <af-ip-list>
-            <unicast-multicast>unicast</unicast-multicast>
-            <autonomous-system>{{ eigrp["as"] }}</autonomous-system>
-            <af-interface>
-              <name>default</name>
-              <passive-interface/>
-            </af-interface>
-          {% for network in eigrp["networks"] %}
-            <network>
-              <number>{{ network | ipaddr("network") }}</number>
-              <wild-card>{{ network | ipaddr("wildcard") }}</wild-card>
-            </network>
-          {% endfor %}
-            <eigrp>
-              <router-id>{{ loopback0 }}</router-id>
-              <stub>
-                <summary/>
-              </stub>
-            </eigrp>
-          </af-ip-list>
-        </address-family>
-      </eigrp>
-    </router>
-  </native>
-</config>
-
-
-
-<config>
-  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <router>
-        <eigrp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-eigrp">
-           <id>200</id>
-               <address-family>
-                  <type>ipv4</type>
-                  <af-ip-vrf-list>
-                     <vrf>TWO</vrf>
-                     <set-as-in-submode>
-                        <autonomous-system>200</autonomous-system>
-                     </set-as-in-submode>
-                     <network>
-                        <number>10.255.20.0</number>
-                        <wild-card>0.0.0.3</wild-card>
-                     </network>
+    <router>  
+    {% if eirgps is defined %}
+      {% for eirgp in eirgps %}
+        <eirgp xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-eirgp">
+          <id> {{ eirgp["id"] }} </id>
+          <address-family>
+            <type>ipv4</type>
+              <af-ip-vrf-list>
+                  <vrf>{{ eirgp["vrf"] }}</vrf>
+                    <set-as-in-submode>
+                      <autonomous-system>200</autonomous-system>
+                    </set-as-in-submode>
+                    <network>
+                      <number>{{ eirgp["network"] }}</number>
+                        <wild-card>{{ ["mask"] }}</wild-card>
+                    </network>
                      <redistribute>
                         <bgp>
-                           <rdr-as>64512</rdr-as>
+                           <rdr-as>{{ eirgp["bgp-as"] }}</rdr-as>
                            <metric>
                               <bandwith>1500</bandwith>
                               <delay>100</delay>
@@ -63,8 +29,10 @@
                         </bgp>
                     </redistribute>
                 </af-ip-vrf-list>
-            </address-family>
-        </eigrp>
+            </address-family
+        </eirgp>
+      {% endfor %}
+    {% endif %}
     </router>
   </native>
 </config>

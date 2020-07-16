@@ -9,6 +9,4 @@
     ansible_network_os: ios
 
   roles:
-  - vrf
-  - vrf_forwarding
-  - ospf
+  - eirgp
