@@ -9,5 +9,5 @@
     ansible_network_os: ios
 
   roles:
-  - routing_pe_ce
   - traffic
+  - mpls
