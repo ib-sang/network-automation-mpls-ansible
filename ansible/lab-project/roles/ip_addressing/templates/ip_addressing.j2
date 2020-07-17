@@ -2,7 +2,7 @@
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
     <interface>
         {% for interface in interfaces %}
-            {% if interface["type"] == GigabitEthernet %}
+            {% if interface["type"] == "GigabitEthernet" %}
             <GigabitEthernet>
                 <name>{{ interface["name"] }}</name>
                 <description>{{ interface["description"] }}</description>
@@ -18,7 +18,7 @@
                     <auto>{{ interface["enabled"] }}</auto>
                 </negotiation>
             </GigabitEthernet>
-            {% elif interface["type"] == FastEthernet %}
+            {% elif interface["type"] == "FastEthernet" %}
             <FasttEthernet>
                 <name>{{ interface["name"] }}</name>
                 <description>{{ interface["description"] }}</description>
