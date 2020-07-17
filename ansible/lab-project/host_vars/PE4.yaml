@@ -66,4 +66,4 @@ pseudowire:
   encapsulation: mpls
   interface: 4
   ip-address: 10.255.255.13
-  cvid: 34
+  vcid: 34
