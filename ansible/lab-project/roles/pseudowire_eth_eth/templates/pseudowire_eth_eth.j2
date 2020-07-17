@@ -1,17 +1,17 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
     <pseudowire-class>
-        <name>{{ pseudowie["name"] }}</name>
-        <encapsulation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-l2vpn">{{ pseudowie["encapsulation"] }}</encapsulation>
+        <name>{{ pseudowire["name"] }}</name>
+        <encapsulation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-l2vpn">{{ pseudowire["encapsulation"] }}</encapsulation>
     </pseudowire-class>
     <interface>
       <GigabitEthernet>
-        <name>{{ pseudowie["interface"] }}</name>
+        <name>{{ pseudowire["interface"] }}</name>
         <xconnect xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-l2vpn">
-          <address>{{ pseudowie["ip-address"] }}</address>
-          <vcid>{{ pseudowie["vcid"] }}</vcid>
-          <encapsulation>{{ pseudowie["encapsulation"] }}</encapsulation>
-          <pw-class>{{ pseudowie["name"] }}</pw-class>
+          <address>{{ pseudowire["ip-address"] }}</address>
+          <vcid>{{ pseudowire["vcid"] }}</vcid>
+          <encapsulation>{{ pseudowire["encapsulation"] }}</encapsulation>
+          <pw-class>{{ pseudowire["name"] }}</pw-class>
         </xconnect>
       </GigabitEthernet>
     </interface>      
