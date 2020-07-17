@@ -1,0 +1,53 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <interface>
+        {% for interface in interfaces %}
+            {% if interface["type"] == GigabitEthernet %}
+            <GigabitEthernet>
+                <name>{{ interface["name"] }}</name>
+                <description>{{ interface["description"] }}</description>
+                <ip>
+                    <address>
+                        <primary>
+                            <address>{{ interface["ipv4"] }}</address>
+                            <mask>{{ interface["ipv4_mask"] }}</mask>
+                        </primary>
+                    </address>
+                </ip>
+                <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+                    <auto>{{ interface["enabled"] }}</auto>
+                </negotiation>
+            </GigabitEthernet>
+            {% elif interface["type"] == FastEthernet %}
+            <FasttEthernet>
+                <name>{{ interface["name"] }}</name>
+                <description>{{ interface["description"] }}</description>
+                <ip>
+                    <address>
+                        <primary>
+                            <address>{{ interface["ipv4"] }}</address>
+                            <mask>{{ interface["ipv4_mask"] }}</mask>
+                        </primary>
+                    </address>
+                </ip>
+                <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+                    <auto>{{ interface["enabled"] }}</auto>
+                </negotiation>
+            </FasttEthernet>
+            {% else %}
+            <Loopback>
+                <name>{{ interface["name"] }}</name>
+                <ip>
+                    <address>
+                        <primary>
+                            <address>{{ interface["ipv4"] }}</address>
+                            <mask>{{ interface["ipv4_mask"] }}</mask>
+                        </primary>
+                    </address>
+                </ip>
+            </Loopback>
+            {% endif %}
+        {% endfor %}
+    </interface>    
+  </native>
+</config>

@@ -2,35 +2,42 @@
 interfaces:
   - type: FastEthernet
     name: 0/1
-    description: connected to P4
-    ipv4: 10.255.254.5
+    description: connected to P1
+    ipv4: 10.255.254.2
     ipv4_mask: 255.255.255.252
     mpls: true
     enabled: true
   - type: FastEthernet
     name: 0/2
-    description: connected to P2
-    ipv4: 10.255.254.1
+    description: connected to P3
+    ipv4: 10.255.254.14
     ipv4_mask: 255.255.255.252
     mpls: true
     enabled: true
   - type: FastEthernet
     name: 0/3
-    description: connected to PE4
-    ipv4: 10.255.254.37
+    description: connected to PE1
+    ipv4: 10.255.254.17
     ipv4_mask: 255.255.255.252
     mpls: true
     enabled: true
   - type: FastEthernet
     name: 0/4
-    description: connected to PE1
-    ipv4: 10.255.254.9
+    description: connected to PE3
+    ipv4: 10.255.254.25
     ipv4_mask: 255.255.255.252
     mpls: true
-    enabled: true        
+    enabled: true    
+  - type: FastEthernet
+    name: 0/5
+    description: connected to PE2
+    ipv4: 10.255.254.21
+    ipv4_mask: 255.255.255.252
+    mpls: true
+    enabled: true    
   - type: Loopback
     name: 0
     description: Loopback0
-    ipv4: 10.255.255.1
+    ipv4: 10.255.255.2
     ipv4_mask: 255.255.255.255
     enabled: true
