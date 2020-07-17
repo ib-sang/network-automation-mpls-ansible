@@ -3,7 +3,7 @@
     <interface>
         {% if interfaces is defined %}
             {% for interface in interfaces%}
-            {% if interface["mpls"]==mpls %}
+            {% if interface["mpls"] %}
             <GigabitEthernet>
                 <name>{{ interface["name"] }}</name>
                 <mpls>
