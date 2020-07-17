@@ -14,4 +14,7 @@ ansible_connection: netconf
 ansible_network_plateform:
   - ansible_network_os: 
     plateform: cisco
-    name: os
+    name: ios
+
+pseudowire:
+  encapsultation: mpls

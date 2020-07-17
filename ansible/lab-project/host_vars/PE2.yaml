@@ -1,41 +1,38 @@
 ---
 interfaces:
-  - name: GigabitEthernet2
+  - GigabitEthernet:
+    name: 2
     description: connected to P3
     ipv4: 10.255.254.30
     ipv4_mask: 255.255.255.252
     enabled: no shutdown
-  - name: GigabitEthernet3
-    description: connected to P2
-    ipv4: 10.255.254.22
-    ipv4_mask: 255.255.255.252
-    mpls: mpls ip
-    enabled: no shutdown
-  - name: GigabitEthernet3
+  - GigabitEthernet:
+    name: 3
     description: connected to P2
     ipv4: 10.255.254.18
     ipv4_mask: 255.255.255.252
-    mpls: mpls ip
+    mpls: true
     enabled: no shutdown
-  - name: GigabitEthernet4
+  - GigabitEthernet:
+    name: 4
     description: connected to customer ONE
-    vrf: 
-    ipv4: 
-    ipv4_mask: 
     enabled: no shutdown
-  - name: GigabitEthernet5
+  - GigabitEthernet:
+    name: 5
     description: connected to customer ONE
     vrf: ONE
     ipv4: 10.255.11.1
     ipv4_mask: 255.255.255.252
     enabled: no shutdown     
-  - name: GigabitEthernet6
+  - GigabitEthernet:
+    name: 6
     description: connected to customer TWO
     vrf: TWO
     ipv4: 10.255.21.1
     ipv4_mask: 255.255.255.252
     enabled: no shutdown
-  - name: Loopback0
+  - Loopback:
+    name: 0
     description: Loopback0
     ipv4: 10.255.255.12
     ipv4_mask: 255.255.255.255
@@ -99,3 +96,25 @@ customers:
   - name: TWO
     redistribute: eigrp
     eigrp-id: 200    
+
+routing-core:
+  - name: ospf
+    id: 1
+    router-id: 10.255.255.12
+  - network: 
+    ip: 10.255.254.20
+    mask: 0.0.0.3
+    area: 0
+  - network: 
+    ip: 10.255.254.28
+    mask: 0.0.0.3
+    area: 0
+  - network: 
+    ip: 10.255.255.12
+    mask: 0.0.0.3
+    area: 0
+  - network: 
+    ip: 10.255.255.28
+    mask: 0.0.0.3
+    area: 0  
+   

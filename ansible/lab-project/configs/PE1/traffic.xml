@@ -1,0 +1,9 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <mpls>
+      <traffic-eng xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls">
+        <tunnels />
+      </traffic-eng>
+    </mpls>
+  </native>
+</config>

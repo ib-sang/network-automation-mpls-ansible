@@ -1,0 +1,21 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <router>  
+    {% if routing-core is defined %}
+        <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+        {% for routing in routing-core %}
+            {% if routing["name"] == ospf %}
+            <id>{{ routing["id"] }}</id>
+            <router-id>{{ routing["router-id"] }}</router-id>
+            {% endif %}
+            <network>
+                <ip>{{ routing["ip"] }}</ip>
+                <mask>{{ routing["mask"] }}</mask>
+                <area>{{ routing["area"] }}</area>
+            </network>
+        {% endfor %}
+        </ospf>
+    {% endif %}
+    </router>
+  </native>
+</config>

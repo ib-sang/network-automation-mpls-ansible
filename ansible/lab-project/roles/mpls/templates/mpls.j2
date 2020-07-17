@@ -1,0 +1,18 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <interface>
+        {% if interfaces is defined %}
+            {% for interface in interfaces%}
+            {% if interface["mpls"] %}
+            <GigabitEthernet>
+                <name>{{ interface["name"] }}</name>
+                <mpls>
+                    <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls" />
+                </mpls>
+            </GigabitEthernet>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+    <interface>
+  </native>
+</config>
