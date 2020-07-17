@@ -5,17 +5,19 @@ interfaces:
     description: connected to P3
     ipv4: 10.255.254.30
     ipv4_mask: 255.255.255.252
+    mpls: false
     enabled: no shutdown
   - GigabitEthernet:
     name: 3
     description: connected to P2
     ipv4: 10.255.254.18
     ipv4_mask: 255.255.255.252
-    mpls: mpls
+    mpls: true
     enabled: no shutdown
   - GigabitEthernet:
     name: 4
     description: connected to customer ONE
+    mpls: false
     enabled: no shutdown
   - GigabitEthernet:
     name: 5
@@ -23,6 +25,7 @@ interfaces:
     vrf: ONE
     ipv4: 10.255.11.1
     ipv4_mask: 255.255.255.252
+    mpls: false
     enabled: no shutdown     
   - GigabitEthernet:
     name: 6
@@ -31,12 +34,14 @@ interfaces:
     ipv4: 10.255.21.1
     ipv4_mask: 255.255.255.252
     enabled: no shutdown
+    mpls: false
   - Loopback:
     name: 0
     description: Loopback0
     ipv4: 10.255.255.12
     ipv4_mask: 255.255.255.255
     enabled: no shutdown  
+    mpls: false
 
 vrfs:
   - name: ONE
