@@ -11,7 +11,7 @@ interfaces:
     description: connected to P2
     ipv4: 10.255.254.18
     ipv4_mask: 255.255.255.252
-    mpls: true
+    mpls: mpls
     enabled: no shutdown
   - GigabitEthernet:
     name: 4
