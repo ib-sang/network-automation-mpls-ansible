@@ -65,3 +65,10 @@ routing-core:
     ip: 10.255.255.13
     mask: 0.0.0.3
     area: 0
+
+pseudowire:
+  name: ETH-TO-ETH
+  encapsulation: mpls
+  interface: 4
+  ip-address: 10.255.255.14
+  cvid: 34

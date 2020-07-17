@@ -1,6 +1,6 @@
 ---
 - name: TEST PROCEDURE 
-  hosts: sjc
+  hosts: sjc1
   connection: local
   gather_facts: no
   vars:
@@ -9,5 +9,4 @@
     ansible_network_os: ios
 
   roles:
-  - traffic
-  - mpls
+  - pseudowire_eth_eth

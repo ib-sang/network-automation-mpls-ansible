@@ -1,0 +1,19 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <pseudowire-class>
+      <name>ETH-TO-ETH</name>
+      <encapsulation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-l2vpn">mpls</encapsulation>
+    </pseudowire-class>
+    <interface>
+      <GigabitEthernet>
+        <name>4</name>
+        <xconnect xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-l2vpn">
+          <address>10.255.255.13</address>
+          <vcid>34</vcid>
+          <encapsulation>mpls</encapsulation>
+          <pw-class>ETH-to-ETH</pw-class>
+        </xconnect>
+      </GigabitEthernet>
+    </interface>  
+  </native>
+</config>
