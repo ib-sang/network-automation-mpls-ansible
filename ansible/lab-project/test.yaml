@@ -1,6 +1,6 @@
 ---
 - name: TEST PROCEDURE 
-  hosts: all
+  hosts: sjc1
   connection: local
   gather_facts: no
   vars:
