@@ -1,6 +1,6 @@
 ---
 - name: TEST PROCEDURE 
-  hosts: sjc1
+  hosts: all
   connection: local
   gather_facts: no
   vars:
@@ -10,4 +10,5 @@
 
   roles:
   - ip_addressing
-  - vpls
+  - mpls
+  - routing_core
