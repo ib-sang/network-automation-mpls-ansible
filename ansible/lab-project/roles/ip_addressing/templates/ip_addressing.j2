@@ -14,9 +14,7 @@
                         </primary>
                     </address>
                 </ip>
-                {% if interface["enabled"] %}
                 <shutdown xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="delete"/>
-                {% endif %}
                 <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
                     <auto>true</auto>
                 </negotiation>
