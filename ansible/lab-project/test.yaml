@@ -9,6 +9,5 @@
     ansible_network_os: ios
 
   roles:
-  - ip_addressing
   - mpls
   - routing_core
