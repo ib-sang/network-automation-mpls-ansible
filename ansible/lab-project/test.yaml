@@ -1,6 +1,6 @@
 ---
 - name: TEST PROCEDURE 
-  hosts: provid1
+  hosts: sjc
   connection: local
   gather_facts: no
   vars:
@@ -9,5 +9,6 @@
     ansible_network_os: ios
 
   roles:
+  - ip_addressing
   - mpls
   - routing_core
