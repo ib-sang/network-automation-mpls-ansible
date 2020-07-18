@@ -10,3 +10,4 @@
 
   roles:
   - ip_addressing
+  - routing_core
