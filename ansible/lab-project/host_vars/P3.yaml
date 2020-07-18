@@ -6,21 +6,21 @@ interfaces:
     ipv4: 10.255.254.13
     ipv4_mask: 255.255.255.252
     mpls: true
-    enabled: "false"
+    enabled: false
   - type: GigabitEthernet
     name: 3
     description: connected to P4
     ipv4: 10.255.254.33
     ipv4_mask: 255.255.255.252
     mpls: true
-    enabled: "false"
+    enabled: false
   - type: GigabitEthernet
     name: 4
     description: connected to PE2
     ipv4: 10.255.254.29
     ipv4_mask: 255.255.255.252
     mpls: true
-    enabled: "false"   
+    enabled: false   
   - type: Loopback
     name: 0
     description: Loopback0
