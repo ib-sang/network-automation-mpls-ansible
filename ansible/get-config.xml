@@ -176,7 +176,14 @@
 
 
 
-  {% elseif customer["redistribute"]=="rip" %}
-                                    </rip>
-                                    {% elseif customer["redistribute"]=="connected" %}
-                                    </connected>
+     <rpc message-id="101"
+          xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+       <copy-config>
+         <target>
+           <startup/>
+         </target>
+         <source>
+           <running/>
+         </source>
+       </copy-config>
+     </rpc>
