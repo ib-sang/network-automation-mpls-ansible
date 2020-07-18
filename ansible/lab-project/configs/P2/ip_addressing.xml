@@ -3,11 +3,11 @@
     <interface>
         <GigabitEthernet>
             <name>2</name>
-            <description>connected to P4</description>
+            <description>connected to P1</description>
             <ip>
                 <address>
                     <primary>
-                        <address>10.255.254.5</address>
+                        <address>10.255.254.2</address>
                         <mask>255.255.255.252</mask>
                     </primary>
                 </address>
@@ -19,11 +19,11 @@
         </GigabitEthernet>
         <GigabitEthernet>
             <name>3</name>
-            <description>connected to P2</description>
+            <description>connected to P3</description>
             <ip>
                 <address>
                     <primary>
-                        <address>10.255.254.1</address>
+                        <address>10.255.254.14</address>
                             <mask>255.255.255.252</mask>
                     </primary>
                 </address>
@@ -35,11 +35,11 @@
         </GigabitEthernet>
         <GigabitEthernet>
             <name>4</name>
-            <description>connected to PE4</description>
+            <description>connected to PE1</description>
             <ip>
                 <address>
                     <primary>
-                        <address>10.255.254.37</address>
+                        <address>10.255.254.17</address>
                         <mask>255.255.255.252</mask>
                     </primary>
                 </address>
@@ -51,11 +51,11 @@
         </GigabitEthernet>
         <GigabitEthernet>
             <name>5</name>
-            <description>connected to PE1</description>
+            <description>connected to PE3</description>
             <ip>
                 <address>
                     <primary>
-                        <address>10.255.254.9</address>
+                        <address>10.255.254.25</address>
                         <mask>255.255.255.252</mask>
                     </primary>
                 </address>
@@ -64,13 +64,29 @@
             <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
                 <auto>true</auto>
             </negotiation>
-        </GigabitEthernet>                
+        </GigabitEthernet>
+        <GigabitEthernet>
+            <name>6</name>
+            <description>connected to PE2</description>
+            <ip>
+                <address>
+                    <primary>
+                        <address>10.255.254.21</address>
+                        <mask>255.255.255.252</mask>
+                    </primary>
+                </address>
+            </ip>
+            <shutdown>false</shutdown>
+            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+                <auto>true</auto>
+            </negotiation>
+        </GigabitEthernet>                         
         <Loopback>
             <name>0</name>
             <ip>
                 <address>
                     <primary>
-                        <address>10.255.255.1</address>
+                        <address>10.255.255.2</address>
                         <mask>255.255.255.255</mask>
                     </primary>
                 </address>

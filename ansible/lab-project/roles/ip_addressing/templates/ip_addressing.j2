@@ -14,8 +14,9 @@
                         </primary>
                     </address>
                 </ip>
+                <shutdown>{{ interface["enabled"] }}</shutdown>
                 <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-                    <auto>{{ interface["enabled"] }}</auto>
+                    <auto>true</auto>
                 </negotiation>
             </GigabitEthernet>
             {% elif interface["type"] == "FastEthernet" %}

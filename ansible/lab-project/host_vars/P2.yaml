@@ -46,24 +46,28 @@ interfaces:
 routing-core:
   - name: ospf
     id: 1
-    router-id: 10.255.255.1
+    router-id: 10.255.255.2
   - network: 
     ip: 10.255.254.0
     mask: 0.0.0.3
     area: 0
   - network: 
-    ip: 10.255.254.4
+    ip: 10.255.254.12
     mask: 0.0.0.3
     area: 0
   - network: 
-    ip: 10.255.254.8
+    ip: 10.255.254.16
     mask: 0.0.0.3
     area: 0
   - network: 
-    ip: 10.255.254.36
+    ip: 10.255.254.20
     mask: 0.0.0.3
     area: 0    
   - network: 
-    ip: 10.255.255.1
+    ip: 10.255.254.24
     mask: 0.0.0.3
+    area: 0     
+  - network: 
+    ip: 10.255.255.2
+    mask: 0.0.0.0
     area: 0     

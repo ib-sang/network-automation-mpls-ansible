@@ -12,6 +12,7 @@
                     </primary>
                 </address>
             </ip>
+            <shutdown>false</shutdown>
             <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
                 <auto>true</auto>
             </negotiation>
@@ -27,6 +28,7 @@
                     </primary>
                 </address>
             </ip>
+            <shutdown>false</shutdown>
             <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
                 <auto>true</auto>
             </negotiation>

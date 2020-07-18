@@ -20,10 +20,32 @@ interfaces:
     ipv4: 10.255.254.29
     ipv4_mask: 255.255.255.252
     mpls: true
-    enabled: "true"    
+    enabled: "true"   
   - type: Loopback
     name: 0
     description: Loopback0
     ipv4: 10.255.255.3
     ipv4_mask: 255.255.255.255
-    enabled: true
+    mpls: true
+
+
+routing-core:
+  - name: ospf
+    id: 1
+    router-id: 10.255.255.3
+  - network: 
+    ip: 10.255.254.12
+    mask: 0.0.0.3
+    area: 0
+  - network: 
+    ip: 10.255.254.28
+    mask: 0.0.0.3
+    area: 0
+  - network: 
+    ip: 10.255.254.32
+    mask: 0.0.0.3
+    area: 0    
+  - network: 
+    ip: 10.255.255.3
+    mask: 0.0.0.0
+    area: 0     

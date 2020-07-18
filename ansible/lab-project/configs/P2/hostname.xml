@@ -1,5 +1,5 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <hostname>P1</hostname>
+    <hostname>P2</hostname>
   </native>
 </config>
