@@ -14,7 +14,9 @@
                         </primary>
                     </address>
                 </ip>
-                <shutdown>{{ interface["enabled"] }}</shutdown>
+                {% if interface["enabled"] %}
+                <shutdown>false</shutdown>
+                {% endif %}
                 <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
                     <auto>true</auto>
                 </negotiation>
