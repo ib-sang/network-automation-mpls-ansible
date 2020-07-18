@@ -10,4 +10,4 @@
 
   roles:
   - ip_addressing
-  - mpls
+  - vpls
