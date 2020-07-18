@@ -82,7 +82,7 @@ customers:
     redistribute: eigrp
     eigrp-id: 200    
 
-routing-core:
+routing_core:
   - name: ospf
     id: 1
     router-id: 10.255.255.12

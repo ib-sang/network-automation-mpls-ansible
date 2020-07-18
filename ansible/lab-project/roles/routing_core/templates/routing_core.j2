@@ -1,9 +1,9 @@
 <config>
   <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
     <router>  
-    {% if routing-core is defined %}
+    {% if routing_core is defined %}
         <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
-        {% for routing in routing-core %}
+        {% for routing in routing_core %}
             {% if routing["name"] == ospf %}
             <id>{{ routing["id"] }}</id>
             <router-id>{{ routing["router-id"] }}</router-id>
