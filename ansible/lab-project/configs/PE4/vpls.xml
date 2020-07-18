@@ -1,0 +1,27 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <interface>
+        <GigabitEthernet>
+            <name>5</name>
+            <mop>
+                <enabled>false</enabled>
+                <sysid>false</sysid>
+            </mop>
+            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+                <auto>true</auto>
+            </negotiation>
+            <service xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+                <instance>
+                    <id>101</id>
+                    <ethernet />
+                        <encapsulation>
+                            <dot1q>
+                            <id>101</id>
+                            </dot1q>
+                        </encapsulation>
+                  </instance>
+            </service>
+        </GigabitEthernet>    
+    </interface>
+  </native>
+</config>

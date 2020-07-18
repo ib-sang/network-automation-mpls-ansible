@@ -1,0 +1,27 @@
+<config>
+  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+    <interface>
+        <GigabitEthernet>
+            <name>{{ vpls["interface"] }}</name>
+            <mop>
+                <enabled>false</enabled>
+                <sysid>false</sysid>
+            </mop>
+            <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+                <auto>{{ vpls["enabled"] }}</auto>
+            </negotiation>
+            <service xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
+                <instance>
+                    <id>{{ vpls["vcid"] }}</id>
+                    <ethernet />
+                        <encapsulation>
+                            <dot1q>
+                            <id>{{ vpls["vcid"] }}</id>
+                            </dot1q>
+                        </encapsulation>
+                  </instance>
+            </service>
+        </GigabitEthernet>    
+    </interface>
+  </native>
+</config>

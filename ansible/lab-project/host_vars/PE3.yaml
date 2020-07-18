@@ -44,3 +44,9 @@ pseudowire:
   interface: 3
   ip-address: 10.255.255.14
   vcid: 34
+
+
+vpls:
+  interface: 4
+  vcid: 101
+  enabled: "true"
