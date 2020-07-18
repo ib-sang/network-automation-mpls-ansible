@@ -161,103 +161,13 @@
          </target>
          <config>
           <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-            <config>
-  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-      <interface>
+          <interface>
           <GigabitEthernet>
               <name>2</name>
-              <description>connected to P1</description>
-              <ip>
-                  <address>
-                      <primary>
-                          <address>10.255.254.2</address>
-                          <mask>255.255.255.252</mask>
-                      </primary>
-                  </address>
-              </ip>
-              <shutdown>false</shutdown>
-              <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-                  <auto>true</auto>
-              </negotiation>
+            <shutdown xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" nc:operation="delete"/>
           </GigabitEthernet>
-          <GigabitEthernet>
-              <name>3</name>
-              <description>connected to P3</description>
-              <ip>
-                  <address>
-                      <primary>
-                          <address>10.255.254.14</address>
-                              <mask>255.255.255.252</mask>
-                      </primary>
-                  </address>
-              </ip>
-              <shutdown>false</shutdown>
-              <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-                  <auto>true</auto>
-              </negotiation>
-          </GigabitEthernet>
-          <GigabitEthernet>
-              <name>4</name>
-              <description>connected to PE1</description>
-              <ip>
-                  <address>
-                      <primary>
-                          <address>10.255.254.17</address>
-                          <mask>255.255.255.252</mask>
-                      </primary>
-                  </address>
-              </ip>
-              <shutdown>false</shutdown>
-              <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-                  <auto>true</auto>
-              </negotiation>
-          </GigabitEthernet>
-          <GigabitEthernet>
-              <name>5</name>
-              <description>connected to PE3</description>
-              <ip>
-                  <address>
-                      <primary>
-                          <address>10.255.254.25</address>
-                          <mask>255.255.255.252</mask>
-                      </primary>
-                  </address>
-              </ip>
-              <shutdown>false</shutdown>
-              <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-                  <auto>true</auto>
-              </negotiation>
-          </GigabitEthernet>
-          <GigabitEthernet>
-              <name>6</name>
-              <description>connected to PE2</description>
-              <ip>
-                  <address>
-                      <primary>
-                          <address>10.255.254.21</address>
-                          <mask>255.255.255.252</mask>
-                      </primary>
-                  </address>
-              </ip>
-              <shutdown>false</shutdown>
-              <negotiation xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ethernet">
-                  <auto>true</auto>
-              </negotiation>
-          </GigabitEthernet>                         
-          <Loopback>
-              <name>0</name>
-              <ip>
-                  <address>
-                      <primary>
-                          <address>10.255.255.2</address>
-                          <mask>255.255.255.255</mask>
-                      </primary>
-                  </address>
-              </ip>
-          </Loopback>
-      </interface>    
-    </native>
-  </config>
+                        
+      </interface> 
           </native>
         </config>
        </edit-config>
