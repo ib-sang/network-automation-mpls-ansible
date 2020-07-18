@@ -1,0 +1,13 @@
+---
+- name: TEST PROCEDURE 
+  hosts: sjc
+  connection: local
+  gather_facts: no
+  vars:
+    switch_role: "distribution"
+    ansible_connection: netconf
+    ansible_network_os: ios
+
+  roles:
+  - vrf
+  - vrf_forwarding

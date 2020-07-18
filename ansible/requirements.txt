@@ -1,4 +1,4 @@
-ansible == 2.9.9
+ansible == 2.5.2
 lxml == 4.5.1
 ncclient == 0.6.7
 cryptography == 2.9.2

@@ -1,0 +1,4 @@
+---
+- import_playbook: l3vpn_vrf_1.yml
+- import_playbook: l3vpn_routing_pe_ce_2.yml
+- import_playbook: l3vpn_routing_pe_pe_3.yml

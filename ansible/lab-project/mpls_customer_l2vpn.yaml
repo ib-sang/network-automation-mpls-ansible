@@ -1,0 +1,3 @@
+---
+- import_playbook: l2vpn_eth_eth_1.yml
+- import_playbook: l2vpn_vpls_2.yml
