@@ -1,7 +1,7 @@
 ---
 - name: Collect facts
   gather_facts: no
-  hosts: sjc
+  hosts: all
   connection: local
   vars:
     credentials:

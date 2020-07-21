@@ -8,18 +8,18 @@ all:
   children:
     sjc:
       hosts:
-        PE1:
-          ansible_host: 192.168.200.21
-        PE2:
-          ansible_host: 192.168.200.22
+        P1:
+          ansible_host: 192.168.200.11
+        P2:
+          ansible_host: 192.168.200.12
 
     pedgeL:
       hosts:
-        PE3:
-          ansible_host: 192.168.200.23
+        P3:
+          ansible_host: 192.168.200.13
     pedgeR:
       hosts:
-        PE4:
-          ansible_host: 192.168.200.24
+        P4:
+          ansible_host: 192.168.200.14
 
   

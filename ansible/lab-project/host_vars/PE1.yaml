@@ -21,7 +21,6 @@ interfaces:
     ipv4_mask: 255.255.255.255
     mpls: true
 
-
 vrfs:
   - name: ONE
     rd: 10.255.255.20:1
@@ -31,8 +30,6 @@ vrfs:
     rd: 10.255.255.30:2
     target-export: 10.255.255.31:2
     target-import: 10.255.255.30:2
-
-
 
 interface_fors:
   - name: 4
@@ -45,7 +42,6 @@ interface_fors:
     ipadd: 10.255.20.1
     mask: 255.255.255.252
 
-
 ospfs:
   - id: 2
     vrf: ONE
@@ -54,7 +50,6 @@ ospfs:
     mask: 0.0.0.3
     area: 2    
 
-
 eigrps:
   - id: 200
     vrf: TWO
@@ -62,7 +57,6 @@ eigrps:
     bgp-as: 64512
     network: 10.255.20.0
     mask: 0.0.0.3
-
 
 neighbors_bgp:
   - id: 10.255.255.12
@@ -82,7 +76,6 @@ customers:
   - name: TWO
     redistribute: eigrp
     eigrp-id: 200
-
 
 routing_core:
   - name: ospf
