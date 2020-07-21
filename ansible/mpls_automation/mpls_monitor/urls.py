@@ -1,11 +1,8 @@
-from django.urls import include,path
-from django.contrib.auth import views as loginview
-#from ORGui.forms import LoginForm
-from . import views
-
-
+from django.urls import path
+from mpls_monitor import views
 
 
 urlpatterns = [
-    path('', views.index, name="home"),
+	path('', views.index, name='index'),
+	path('ping/', views.ping_test, name='ping_test'),
 ]
