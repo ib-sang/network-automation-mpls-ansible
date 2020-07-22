@@ -12,6 +12,10 @@ all:
           ansible_host: 192.168.200.11
         P2:
           ansible_host: 192.168.200.12
+    pedge:
+      hosts:
+        P1:
+          ansible_host: 192.168.200.11  
 
     pedgeL:
       hosts:
