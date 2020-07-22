@@ -1,0 +1,27 @@
+---
+all:
+  vars:
+    username: admin
+    password: admin
+    ansible_connection: local
+    ansible_python-interpreter: "usr/bin/env python"
+  children:
+    sjc:
+      hosts:
+        P1:
+          ansible_host: 192.168.200.11
+        P2:
+          ansible_host: 192.168.200.12
+    pedge:
+      hosts:
+        P1:
+          ansible_host: 192.168.200.11  
+
+    pedgeL:
+      hosts:
+        P3:
+          ansible_host: 192.168.200.13
+    pedgeR:
+      hosts:
+        P4:
+          ansible_host: 192.168.200.14

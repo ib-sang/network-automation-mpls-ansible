@@ -1,7 +1,22 @@
 ---
 - name: ping example playbook
   hosts: P1
+  vars:
+      credentials:
+        host: "{{ ansible_host }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        timeout: 30
 
   tasks:
     - name: test ping
       ping:
+    - name: run show version on remote devices
+      ios_command:
+        commands:
+         - show memory statistics
+        provider: "{{ credentials }}"
+      register: output
+
+    - debug:
+        msg: "{{ output.stdout_lines }}"
