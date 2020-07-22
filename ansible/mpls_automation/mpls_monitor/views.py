@@ -13,6 +13,10 @@ def index(request):
 def ping_test(request):
 	device = request.POST.get('device-name') 
 	result = subprocess.Popen(['ansible-playbook', 'ping-playbook.yml', '--extra-vars', 'host='+device ], stdout=subprocess.PIPE)
-	output, err = result.communicate()
-	return HttpResponse(result)
+	try:
+		output, err = result.communicate(timeout=15)
+  		#pprint.pprint(outs.decode().split('\n'))
+	except subprocess.SubprocessError as errs:
+		proc.kill()
+		sys.exit("Error: {}".format(errs))
 	return JsonResponse(json.loads(output))
