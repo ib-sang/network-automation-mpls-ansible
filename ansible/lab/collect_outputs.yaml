@@ -10,6 +10,8 @@
       password: "{{ password }}"
 
   tasks:
+    - name: test ping
+      ping:
     - name: run show version on remote devices
       ios_command:
         commands:
