@@ -4,8 +4,8 @@ from django.http import JsonResponse, HttpResponse
 
 
 def index(request):
-	DeviceList = [('R1 - Cisco ios', 'R1'), ('R2 - Cisco ios', 'R2'),
-	 				('R3 - Junos srx', 'R3'), ('R4 - Cisco ios xr', 'R4'),
+	DeviceList = [('R1 - Cisco ios', 'P1'), ('R2 - Cisco ios', 'P2'),
+	 				('R3 - Junos srx', 'P3'), ('R4 - Cisco ios xr', 'P4'),
 	 				]
 	return render(request, 'index.html', {'DeviceList': DeviceList})
 
