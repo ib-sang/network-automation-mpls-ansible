@@ -14,5 +14,5 @@ def ping_test(request):
 	device = request.POST.get('device-name') 
 	result = subprocess.Popen(['ansible-playbook', 'ping-playbook.yml', '--extra-vars', 'host='+device ], stdout=subprocess.PIPE)
 	output, err = result.communicate()
-	return HttpResponse(resulr)
+	return HttpResponse(result)
 	return JsonResponse(json.loads(output))
