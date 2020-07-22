@@ -5,13 +5,8 @@ import subprocess
 import sys
 
 
-def sample(host, user):
-    cmd = ["ansible-playbook",
-           "-i {},".format(host),
-           "-e ansible_user={}".format(user),
-           "-e ANSIBLE_HOST_KEY_CHECKING=False",
-           "ping-playbook.yaml",
-           "-v"]
+def sample(host):
+    cmd = ['ansible-playbook', 'ping-playbook.yml', '--extra-vars', 'host='+host ]
 
     proc = subprocess.Popen(cmd,
                             stdin=subprocess.PIPE,
@@ -26,4 +21,4 @@ def sample(host, user):
         sys.exit("Error: {}".format(errs))
 
 def main():
-    sample("P1", "admin")
+    sample("P1")
