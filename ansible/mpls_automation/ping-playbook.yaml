@@ -1,20 +1,14 @@
 ---
 - name: ping example playbook
   hosts: P1
-  
+
   tasks:
     - name: test ping
       ping:
     - name: run show version on remote devices
       ios_command:
         commands:
-         - show version
          - show memory statistics
-         - show arp
-         - show mpls ldp bindings
-         - show mpls ldp neighbor
-         - show mpls forwarding-table
-        provider: "{{ credentials }}"
       register: output
 
     - debug:
