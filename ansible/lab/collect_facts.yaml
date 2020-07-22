@@ -11,10 +11,6 @@
       timeout: 30
 
   tasks:
-    - ios_facts:
-        provider: "{{ credentials }}"
-      name: Collect IOS facts
-      register: ios_facts 
 
     - debug:
         msg: "{{ ansible_net_hostname }}, version: {{ ansible_net_version }}"
