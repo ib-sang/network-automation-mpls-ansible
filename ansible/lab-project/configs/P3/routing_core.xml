@@ -3,7 +3,6 @@
     <router> 
         <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
             <id>1</id>
-            <router-id>10.255.255.3</router-id>
             <network>
                 <ip>10.255.254.12</ip>
                 <mask>0.0.0.3</mask>

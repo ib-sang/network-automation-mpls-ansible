@@ -3,9 +3,8 @@
     <router>  
     {% if routing_core is defined %}
         <ospf xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-ospf">
+        <id>1</id>
         {% for routing in routing_core %}
-            <id>{{ routing["id"] }}</id>
-            <router-id>{{ routing["router-id"] }}</router-id>
             <network>
                 <ip>{{ routing["ip"] }}</ip>
                 <mask>{{ routing["mask"] }}</mask>

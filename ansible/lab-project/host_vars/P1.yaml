@@ -37,9 +37,6 @@ interfaces:
 
 
 routing_core:
-  - name: ospf
-    id: 1
-    router-id: 10.255.255.1
   - network: 
     ip: 10.255.254.0
     mask: 0.0.0.3

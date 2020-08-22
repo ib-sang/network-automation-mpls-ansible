@@ -26,9 +26,6 @@ neighbors_bgp:
     loopback: 0
 
 routing_core:
-  - name: ospf
-    id: 1
-    router-id: 10.255.255.13
   - network: 
     ip: 10.255.254.24
     mask: 0.0.0.3
