@@ -1,5 +1,0 @@
--r requirements.txt
-ipython
-mypy
-ipdb
-block
