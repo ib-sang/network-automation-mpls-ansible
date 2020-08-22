@@ -1,6 +1,6 @@
 ---
 - name: TEST PROCEDURE 
-  hosts: provid
+  hosts: P2
   connection: local
   gather_facts: no
   vars:
