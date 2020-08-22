@@ -1,4 +1,4 @@
 ---
-- import_playbook: core_addressing_1.yml
-- import_playbook: core_mpls_2.yml
-- import_playbook: core_routing_3.yml
+- import_playbook: core_addressing_1.yaml
+- import_playbook: core_mpls_2.yaml
+- import_playbook: core_routing_3.yaml
