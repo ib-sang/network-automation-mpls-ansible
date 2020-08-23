@@ -1,6 +1,6 @@
 ---
 - name: MPLS PROCEDURE 
-  hosts: sjc
+  hosts: all
   connection: local
   gather_facts: no
   vars:
