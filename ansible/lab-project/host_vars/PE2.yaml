@@ -49,7 +49,7 @@ ospfs:
   - id: 2
     vrf: ONE
     bgp-as: 64512
-    network: 10.255.10.0
+    network: 10.255.11.0
     mask: 0.0.0.3
     area: 2    
 
