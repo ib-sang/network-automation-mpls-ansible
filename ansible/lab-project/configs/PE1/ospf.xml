@@ -15,7 +15,7 @@
         <network>
           <ip>10.255.10.0</ip>
           <mask>0.0.0.3</mask>
-          <area>10</area>
+          <area>2</area>
         </network>
       </ospf>
     </router>
