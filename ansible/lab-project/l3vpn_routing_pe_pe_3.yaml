@@ -1,5 +1,5 @@
 ---
-- name: TEST PROCEDURE 
+- name: MP-BGP PROCEDURE 
   hosts: sjc
   connection: local
   gather_facts: no

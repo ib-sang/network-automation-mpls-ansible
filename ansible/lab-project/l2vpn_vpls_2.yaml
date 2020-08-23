@@ -1,5 +1,5 @@
 ---
-- name: TEST PROCEDURE 
+- name: L2VPN VPLS PROCEDURE 
   hosts: sjc1
   connection: local
   gather_facts: no

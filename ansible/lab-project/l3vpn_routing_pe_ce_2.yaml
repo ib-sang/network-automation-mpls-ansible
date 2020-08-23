@@ -1,5 +1,5 @@
 ---
-- name: TEST PROCEDURE 
+- name: L2VPN routing PE-CE PROCEDURE 
   hosts: sjc
   connection: local
   gather_facts: no
