@@ -1,6 +1,6 @@
 ---
-- name: TEST PROCEDURE 
-  hosts: P4
+- name: MPLS PROCEDURE 
+  hosts: provid
   connection: local
   gather_facts: no
   vars:
