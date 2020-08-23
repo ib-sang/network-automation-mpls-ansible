@@ -28,7 +28,19 @@ interfaces:
     ipv4_mask: 255.255.255.252
     mpls: true
     enabled: true   
-  
+  - type: GigabitEthernet
+    name: 6
+    description: connected to PE2
+    ipv4: 10.255.254.21
+    ipv4_mask: 255.255.255.252
+    mpls: true
+    enabled: true   
+  - type: Loopback
+    name: 0
+    description: Loopback0
+    ipv4: 10.255.255.2
+    ipv4_mask: 255.255.255.255
+    mpls: false                                       
 
 
 routing_core:
