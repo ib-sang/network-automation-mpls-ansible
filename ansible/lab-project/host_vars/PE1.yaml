@@ -19,7 +19,7 @@ interfaces:
     description: Loopback0
     ipv4: 10.255.255.11
     ipv4_mask: 255.255.255.255
-    mpls: true
+    mpls: false
 
 vrfs:
   - name: ONE
