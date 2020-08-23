@@ -1,6 +1,6 @@
 ---
 - name: TEST PROCEDURE 
-  hosts: P2
+  hosts: P1
   connection: local
   gather_facts: no
   vars:
