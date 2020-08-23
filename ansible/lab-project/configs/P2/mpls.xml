@@ -6,31 +6,7 @@
         <mpls>
           <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
         </mpls>
-      </GigabitEthernet>
-      <GigabitEthernet>
-        <name>3</name>
-        <mpls>
-          <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
-        </mpls>
-      </GigabitEthernet>
-      <GigabitEthernet>
-        <name>4</name>
-        <mpls>
-          <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
-        </mpls>
-      </GigabitEthernet>
-      <GigabitEthernet>
-        <name>5</name>
-        <mpls>
-          <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
-        </mpls>
-      </GigabitEthernet>
-      <GigabitEthernet>
-        <name>6</name>
-        <mpls>
-          <ip xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-mpls"/>
-        </mpls>
-      </GigabitEthernet>             
+      </GigabitEthernet>            
     </interface>
   </native>
 </config>
