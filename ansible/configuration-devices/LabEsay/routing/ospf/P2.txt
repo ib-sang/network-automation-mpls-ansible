@@ -1,8 +1,0 @@
-conf t
-!
-router ospf 1
- router-id 10.255.255.2
- network 10.255.254.4 0.0.0.3 area 0
- network 10.255.254.8 0.0.0.3 area 0
- network 10.255.255.2 0.0.0.0 area 0
-!
