@@ -1,6 +1,6 @@
 ansible == 2.6.18
 lxml == 4.5.1
 ncclient == 0.6.7
-cryptography == 2.9.2
+cryptography == 3.2
 requests == 2.24.0
 PyYAML==5.3.1
